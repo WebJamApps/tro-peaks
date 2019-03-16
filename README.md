@@ -1,4 +1,4 @@
-# tro-peaks
+## Tro-Peaks Adventures
 
 [![CircleCI](https://circleci.com/gh/WebJamApps/tro-peaks.svg?style=svg)](https://circleci.com/gh/WebJamApps/tro-peaks)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/8af35aa9ae1f123e5d97/test_coverage)](https://codeclimate.com/github/WebJamApps/tro-peaks/test_coverage)
