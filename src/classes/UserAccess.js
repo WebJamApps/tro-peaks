@@ -50,8 +50,8 @@ export class UserAccess {
             return next();
           }
 
-          if ((userRoles[i].toLowerCase() === 'developer' || userRoles[i] === 'clc-admin')
-          && routingContext.params.childRoute.indexOf('clc-admin') !== -1) {
+          if ((userRoles[i].toLowerCase() === 'developer' || userRoles[i] === 'tro-admin')
+          && routingContext.params.childRoute.indexOf('tro-admin') !== -1) {
             // console.log('allowed');
             return next();
           }
