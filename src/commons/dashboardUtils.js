@@ -3,12 +3,12 @@ exports.childRoute = function childroute(module, ls) {
     return module.app.router.navigate('dashboard/user-account');
   }
   if (module.user.userType === undefined || module.user.userType === ''
-  || (module.user.userType !== 'Developer' && module.user.userType !== 'clc-admin')) {
+  || (module.user.userType !== 'Developer' && module.user.userType !== 'tro-admin')) {
     module.app.authenticated = false;
     ls.clear();
     return module.app.router.navigate('/');
   }
-  return module.app.router.navigate('dashboard/clc-admin');
+  return module.app.router.navigate('dashboard/tro-admin');
 };
 
 exports.subRoute = async function subRoute(module, ls) {
