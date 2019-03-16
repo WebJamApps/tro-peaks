@@ -61,42 +61,17 @@ export class App {
 
   mapConfig(config) {
     return config.map([ // There is no way to refactor this that I can tell
-      {
-        route: 'dashboard',
+      { route: 'dashboard',
         name: 'dashboard-router',
         moduleId: PLATFORM.moduleName('./dashboard-router'),
         nav: false,
         title: '',
         auth: true,
-        settings: 'fa fa-tachometer'
-      },
-      {
-        route: 'calendar',
-        name: 'calendar',
-        moduleId: PLATFORM.moduleName('./calendar'),
-        nav: false,
-        title: 'Calendar',
-        settings: 'fa fa-music'
-      },
-      {
-        route: ['', 'home'], name: 'home', moduleId: PLATFORM.moduleName('./home'), nav: false, title: '', settings: 'fa fa-home'
-      },
-      {
-        route: 'staff',
-        name: 'staff',
-        moduleId: PLATFORM.moduleName('./staff'),
-        nav: false,
-        title: 'Church Staff',
-        settings: 'fa fa-users'
-      },
-      {
-        route: 'youth',
-        name: 'youth',
-        moduleId: PLATFORM.moduleName('./youth'),
-        nav: false,
-        title: 'Youth Ministry',
-        settings: 'fa fa-users'
-      },
+        settings: 'fa fa-tachometer' },
+      { route: 'calendar', name: 'calendar', moduleId: PLATFORM.moduleName('./calendar'), nav: false, title: 'Calendar', settings: 'fa fa-music' },
+      { route: ['', 'home'], name: 'home', moduleId: PLATFORM.moduleName('./home'), nav: false, title: '', settings: 'fa fa-home' },
+      { route: 'staff', name: 'staff', moduleId: PLATFORM.moduleName('./staff'), nav: false, title: 'Staff', settings: 'fa fa-users' },
+      { route: 'youth', name: 'youth', moduleId: PLATFORM.moduleName('./youth'), nav: false, title: 'Youth Ministry', settings: 'fa fa-users' },
     ]);
   }
 
