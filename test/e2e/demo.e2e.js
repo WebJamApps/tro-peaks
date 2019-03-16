@@ -21,11 +21,11 @@ describe('tro-peaks.com', () => {
     await expect(poSkeleton.getCurrentPageTitle()).toBe('Tro-Peaks Adventures');
   });
 
-  // it('should navigate to staff page', async () => {
-  //   await poSkeleton.navigateTo('/staff');
-  //   await expect(poSkeleton.getCurrentPageTitle()).toBe('Church Staff | College Lutheran Church');
-  // });
-  //
+  it('should navigate to staff page', async () => {
+    await poSkeleton.navigateTo('/staff');
+    await expect(poSkeleton.getCurrentPageTitle()).toBe('Staff | Tro-Peaks Adventures');
+  });
+
   // it('should navigate to beliefs page', async () => {
   //   await poSkeleton.navigateTo('/beliefs');
   //   await expect(poSkeleton.getCurrentPageTitle()).toBe('Our Lutheran Beliefs | College Lutheran Church');
