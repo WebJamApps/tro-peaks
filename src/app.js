@@ -71,7 +71,12 @@ export class App {
       { route: 'calendar', name: 'calendar', moduleId: PLATFORM.moduleName('./calendar'), nav: false, title: 'Calendar', settings: 'fa fa-music' },
       { route: ['', 'home'], name: 'home', moduleId: PLATFORM.moduleName('./home'), nav: false, title: '', settings: 'fa fa-home' },
       { route: 'staff', name: 'staff', moduleId: PLATFORM.moduleName('./staff'), nav: false, title: 'Staff', settings: 'fa fa-users' },
-      { route: 'youth', name: 'youth', moduleId: PLATFORM.moduleName('./youth'), nav: false, title: 'Youth Ministry', settings: 'fa fa-users' },
+      { route: 'testimonials',
+        name: 'testimonials',
+        moduleId: PLATFORM.moduleName('./testimonials'),
+        nav: false,
+        title: 'Testimonials',
+        settings: 'fa fa-users' },
     ]);
   }
 

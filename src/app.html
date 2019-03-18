@@ -42,15 +42,9 @@
             </a>
           </div>
           <div class="menu-item">
-            <a href="/youth" class="nav-link" click.delegate="close()">
+            <a href="/testimonials" class="nav-link" click.delegate="close()">
               <span class="fa fa-futbol-o " aria-hidden="true"></span>
-              <span class="nav-item" if.bind="fullmenu">Youth Ministry</span>
-            </a>
-          </div>
-          <div class="menu-item">
-            <a href="/news" class="nav-link" click.delegate="close()">
-              <span class="fa fa-newspaper-o" aria-hidden="true"></span>
-              <span class="nav-item" if.bind="fullmenu">News & Forum</span>
+              <span class="nav-item" if.bind="fullmenu">Testimonials</span>
             </a>
           </div>
           <div class="menu-item" if.bind="currentRoute !=='' && currentRoute !=='home'">
@@ -82,29 +76,31 @@
         <div class="swipe-area">
           <div class="p-5 d-block"></div>
         </div>
-        <div class="material-header ${currentStyles.headerClass}">
-          <div class="headercontent">
-          </div>
-          <div>
-            <div style="margin-left:5px; margin-top:-8px">
-              <table style="margin-left:5px;">
-                <tbody class="formatting" style="background-color:none">
-                  <tr class="formatting" style="background-color:none">
-                    <td style="border:none;padding:0;width:80%">
-                      <h2 class="header-text" style="margin-bottom:0">
+        <div class="material-header ${currentStyles.headerClass}" style="height:186px;background-color:#c5d0e0">
+          <!-- <div class="headercontent">
+          </div> -->
+          <!-- <div> -->
+          <div style="margin-left:-5px; margin-top:0">
+            <table style="margin-left:5px;">
+              <tbody class="formatting" style="background-color:none">
+                <tr class="formatting" style="background-color:none">
+                  <td style="border:none;padding:0; background-color:#244a8bff">
+                    <img src="https://dl.dropboxusercontent.com/s/tmuuzo5jmn1uwi1/TP-logo.png?dl=0">
+                    <!-- <h2 class="header-text" style="margin-bottom:0">
                         <a class="header-text" href="/" style="text-align:left;text-decoration: none">
                           College Lutheran <span if.bind="widescreen" style="font-size:19pt">Church</span>
                         </a>
-                        <span if.bind="!widescreen" style="font-size:19pt">Church</span></h2>
-                      <p style="max-width:80%" class="subTitle">We celebrate God's grace and share His love in Christ!</p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                        <span if.bind="!widescreen" style="font-size:19pt">Church</span></h2> -->
+                    <!-- <p style="max-width:80%" class="subTitle">We celebrate God's grace and share His love in Christ!</p> -->
+                  </td>
+                  <!-- <td style="height:180px;border:none; background-color:#c5d0e0;padding:0;border-spacing:0;"></td>
+                </tr> -->
+              </tbody>
+            </table>
           </div>
+          <!-- </div> -->
         </div>
-        <div style="width:auto;" class="content-block">
+        <div style="width:auto;top:100px" class="content-block">
           <router-view></router-view>
           <div id="wjfooter" class="footer" style="margin-top:20px">
             <div style="text-align: center;padding:16px;margin-bottom:0;margin-top:0;padding-top:30px;padding-bottom:30px">
