@@ -165,15 +165,15 @@ export class App {
     const navList = document.getElementsByClassName('nav-list')[0];
     const mobilemenutoggle = document.getElementById('mobilemenutoggle');
     if (menuDrawer !== undefined && menuDrawer !== null) {
-      mobilemenutoggle.style.backgroundColor = '#244a8bff';
-      menuDrawer.style.backgroundColor = '#c0c0c0';
-      navList.style.backgroundColor = '#c0c0c0';
+      mobilemenutoggle.style.backgroundColor = 'black';
+      menuDrawer.style.backgroundColor = '#e6eefe';
+      navList.style.backgroundColor = '#e6eefe';
     }
   }
 
   get widescreen() {
     return this.appUtils.handleScreenSize(this, document.documentElement.clientWidth > 900,
-      $(document.getElementsByClassName('drawer')).parent(), 'returnIsWideCLC');
+      $(document.getElementsByClassName('drawer')).parent(), 'returnIsWide');
   }
 
   attached() {

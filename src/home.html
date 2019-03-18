@@ -3,40 +3,45 @@
     <a id="top"></a>
     <div>
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12 col-xl-6 col-12 col-sm-12" style="top:0;padding-right:6px">
-            <p style="margin-top:38px; margin-bottom:16px;font-size:17px;">
-              College Lutheran Church is located in Southwest Virginia in the beautiful city of Salem, right next to Roanoke, VA.
-              The church is situated on College Avenue,
-              within easy walking distance of Roanoke College.
-              College Lutheran Church is part of the Evangelical Lutheran Church in America (ELCA).<br><br><br>
-              <span style="font-size:18px"> <strong>Join Us for Holy Communion</strong></span>
-              <ul style="margin-bottom:0;padding-top:0">
-                <li style="margin-left:-10px">Service of Holy Communion, Sunday at 10:00 am</li>
-                <br>
-                <li style="margin-left:-10px">Sunday school for all ages begins at 9:00 am</li>
-                <br>
-                <li style="margin-left:-10px">Choir rehearses on Sunday after Worship</li>
-                <br>
-                <li style="margin-left:-10px">Wednesday Bible study at 11:15 am followed by Holy Communion at 12:15 pm</li>
-                <br>
-              </ul>
-              <i>Please join us as we celebrate God’s grace and share His love in Christ</i>.
-            </p>
-            <h4 style="font-weight:bold;margin-top:35px" innerhtml.bind="homeContent.title | sanitizeHTML"></h4>
-            <section style="margin-top:20px;text-align:left;margin-bottom:35px" innerhtml.bind="homeContent.comments | sanitizeHTML"></section>
-            <p style="padding-right:15px;margin-bottom:16px;padding-bottom:0">
-              <span style="font-size:18px"> <strong>What Else is Happening at CLC?</strong></span></p>
-            <p>Click <a href="/news">News & Forum</a> to view a copy of our monthly forum or subscribe to our weekly email announcements. Scroll below to view our CLC Events Calendar, and follow us on social media.
-              <br>
-            </p>
+        <!-- <div class="row"> -->
+        <div>
+          <div id="musicSlide1" style="margin-top:0">
+            <img alt="churchBalcony" src="https://dl.dropboxusercontent.com/s/zddcbz3j280is5a/kilimanjaro-banner.png?dl=0">
           </div>
-          <!-- <div if.bind="widescreenHomepage" class="col-xl-6" style="padding:1px;right:0;">
+        </div>
+        <div class="material-content elevation2" style="max-width:998px;margin:auto">
+          <p style="margin-top:38px; margin-bottom:16px;font-size:17px;">
+            College Lutheran Church is located in Southwest Virginia in the beautiful city of Salem, right next to Roanoke, VA.
+            The church is situated on College Avenue,
+            within easy walking distance of Roanoke College.
+            College Lutheran Church is part of the Evangelical Lutheran Church in America (ELCA).<br><br><br>
+            <span style="font-size:18px"> <strong>Join Us for Holy Communion</strong></span>
+            <ul style="margin-bottom:0;padding-top:0">
+              <li style="margin-left:-10px">Service of Holy Communion, Sunday at 10:00 am</li>
+              <br>
+              <li style="margin-left:-10px">Sunday school for all ages begins at 9:00 am</li>
+              <br>
+              <li style="margin-left:-10px">Choir rehearses on Sunday after Worship</li>
+              <br>
+              <li style="margin-left:-10px">Wednesday Bible study at 11:15 am followed by Holy Communion at 12:15 pm</li>
+              <br>
+            </ul>
+            <i>Please join us as we celebrate God’s grace and share His love in Christ</i>.
+          </p>
+          <h4 style="font-weight:bold;margin-top:35px" innerhtml.bind="homeContent.title | sanitizeHTML"></h4>
+          <section style="margin-top:20px;text-align:left;margin-bottom:35px" innerhtml.bind="homeContent.comments | sanitizeHTML"></section>
+          <p style="padding-right:15px;margin-bottom:16px;padding-bottom:0">
+            <span style="font-size:18px"> <strong>What Else is Happening at CLC?</strong></span></p>
+          <p>Click <a href="/news">News & Forum</a> to view a copy of our monthly forum or subscribe to our weekly email announcements. Scroll below to view our CLC Events Calendar, and follow us on social media.
+            <br>
+          </p>
+        </div>
+        <!-- <div if.bind="widescreenHomepage" class="col-xl-6" style="padding:1px;right:0;">
             <div id="slideshow1">
               <img alt="churchBuilding" src="https://dl.dropboxusercontent.com/s/8wcnwvc7s9iclj5/clcBuilding.png?dl=0">
             </div>
           </div> -->
-        </div>
+        <!-- </div> -->
       </div>
     </div>
     <hr>
