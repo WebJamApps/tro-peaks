@@ -1,60 +1,56 @@
 <template>
   <div class="page-host">
     <div class="${currentStyles.sidebarClass} drawer-container" style="display:none">
+      <p style="padding-top:5px;padding-left:5px">Tro-Peaks Adventures Ltd.<br>
+        Moshi-Kilimanjaro, Tanzania<br>
+        <a class="email" href="mailto:tropeaksadventures
+@gmail.com">Email: tropeaksadventures<br>@gmail.com</a><br>
+        Cell: +255 763 830820<br>
+        Cell: +255 756 728700
+      </p>
       <div class="drawer" style="display: none !important;background-color: #9cbafa">
         <div style="background-color:#9cbafa;width:220px;">
         </div>
-        <!-- <div if.bind="!fullmenu" class="material-header ${currentStyles.headerClass}" style="width: 63px; height:91px"></div> -->
         <div class="nav-list" style="top:150px;background-color: #e6eefe">
-          <!-- <p style="padding:0;margin:0;background-color:#e6eefe">&nbsp;</p>
-          <p style="padding:0;margin:0;background-color:#e6eefe">&nbsp;</p>
-          <p style="padding:0;margin:0;font-size:8px;background-color:#e6eefe">&nbsp;</p> -->
-          <!-- <div>
-            <p style="font-size:1px;margin-bottom:2px">&nbsp;</p>
-        </div> -->
-          <!-- <div class="menu-item" style="background-color:#9cbafa" if.bind="!authenticated"> -->
-          <!-- <p style="color:white;margin-bottom:2px"><span style="color:white">ph:</span>
-              <a href="tel:5403894963">(540) 389-4963</a>
-              <br><span style="color:white">fax:</span> (540) 389-4980<br>
-              <a style="word-wrap: break-word;" href="mailto:office1@collegelutheran.org">
-                office1@collegelutheran.org
-              </a> -->
-          <!-- </p> -->
-          <!-- </div> -->
-          <!-- <div class="menu-item">&nbsp;</div> -->
           <div class="menu-item" if.bind="authenticated">
             <a href="/dashboard" class="nav-link" click.delegate="close()">
               <span class="fa fa-tachometer"></span>
-              <span class="nav-item">${dashboardTitle}</span>
+              <span class="nav-item">Admin</span>
             </a>
           </div>
-          <div class="menu-item" if.bind="currentRoute !=='staff'">
-            <a href="/staff" class="nav-link" click.delegate="close()">
-              <span class="fa fa-users" aria-hidden="true"></span>
-              <span class="nav-item" if.bind="fullmenu">Staff</span>
+          <div class="menu-item">
+            <a href="/booking" class="nav-link" click.delegate="close()">
+              <span class="fa fa-user-plus" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Contact & Booking</span>
             </a>
           </div>
           <div class="menu-item">
             <a href="/testimonials" class="nav-link" click.delegate="close()">
-              <span class="fa fa-futbol-o " aria-hidden="true"></span>
+              <span class="fa fa-bullhorn" aria-hidden="true"></span>
               <span class="nav-item" if.bind="fullmenu">Testimonials</span>
+            </a>
+          </div>
+          <div class="menu-item" if.bind="currentRoute !=='staff'">
+            <a href="/staff" class="nav-link" click.delegate="close()">
+              <span class="fa fa-pied-piper-alt" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Staff</span>
             </a>
           </div>
           <div class="menu-item" if.bind="currentRoute !=='' && currentRoute !=='home'">
             <a href="/" class="nav-link" click.delegate="close()">
-              <span class="fa fa-heart" aria-hidden="true"></span>
+              <span class="fa fa-eye" aria-hidden="true"></span>
               <span class="nav-item" if.bind="fullmenu">Home</span>
             </a>
           </div>
           <div class="menu-item" if.bind="!authenticated && currentRoute ==='staff'" style="text-align:center;margin:center">
             <a class="nav-link" click.delegate="authenticate('google')" style=" padding-right:4px">
-              <span class="fa fa-sign-out nav-item" style="cursor: pointer; cursor: hand;"></span>
+              <span class="fa fa-sign-in nav-item" style="cursor: pointer; cursor: hand;color:#760908"></span>
             </a>
             <button click.delegate="authenticate('google')">Login</button>
           </div>
           <div class="menu-item" if.bind="authenticated">
             <a class="nav-link" click.delegate="logout()" style=" padding-right:4px">
-              <span class="fa fa-sign-out nav-item" style="cursor: pointer; cursor: hand;"></span>
+              <span class="fa fa-sign-out nav-item" style="cursor: pointer; cursor: hand;color:#760908"></span>
             </a>
             <button click.delegate="logout()" class="material-content-button">
               Logout
@@ -64,34 +60,44 @@
       </div>
     </div>
     <div main class="main-panel">
-      <i click.delegate="toggleMobileMenu('open')" id="mobilemenutoggle" class="fa fa-bars pull-right fa-1.5x mobile-menu-toggle" aria-hidden="true" show.bind="!widescreen"></i>
+      <i click.delegate="toggleMobileMenu('open')" style="color:#760908" id="mobilemenutoggle" class="fa fa-bars pull-right fa-lg mobile-menu-toggle" aria-hidden="true" show.bind="!widescreen"></i>
       <div class="mainPanel">
         <div class="swipe-area">
           <div class="p-5 d-block"></div>
         </div>
         <div class="material-header ${currentStyles.headerClass}" style="height:150px;background-color:#9cbafa;position:relative;z-index:9999">
-          <!-- <div class="headercontent">
-          </div> -->
-          <!-- <div> -->
-          <div style="margin:auto; top:10px">
+          <div style="margin:auto; top:6px" if.bind="widescreen">
             <table>
               <tbody class="formatting" style="background-color:none">
                 <tr class="formatting" style="background-color:none">
-                  <td style="border:none;padding-top:22px; background-color:transparent">
+                  <td style="border:none;padding-top:18px; background-color:transparent">
                     <img src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0">
-                    <!-- <h2 class="header-text" style="margin-bottom:0">
-                        <a class="header-text" href="/" style="text-align:left;text-decoration: none">
-                          College Lutheran <span if.bind="widescreen" style="font-size:19pt">Church</span>
-                        </a>
-                        <span if.bind="!widescreen" style="font-size:19pt">Church</span></h2> -->
-                    <!-- <p style="max-width:80%" class="subTitle">We celebrate God's grace and share His love in Christ!</p> -->
                   </td>
-                  <!-- <td style="height:180px;border:none; background-color:#c5d0e0;padding:0;border-spacing:0;"></td>
-                </tr> -->
+                  <!-- <td style="border:none;padding-left:2in;width:4in"></td> -->
               </tbody>
             </table>
           </div>
-          <!-- </div> -->
+          <div class="cardBack" style="background-color:#9cbafa;display:none;position:fixed;top:0;height:138px;width:340px">
+            <p style="padding-top:10px;padding-left:16px">Tro-Peaks Adventures Ltd.<br>
+              Moshi-Kilimanjaro, Tanzania<br>
+              <a class="email" href="mailto:tropeaksadventures
+      @gmail.com">Email: tropeaksadventures@gmail.com</a><br>
+              Cell: +255 763 830820<br>
+              Cell: +255 756 728700
+            </p>
+          </div>
+          <div style="margin:auto; top:0" if.bind="!widescreen">
+            <table>
+              <tbody class="formatting" style="background-color:none">
+                <tr class="formatting" style="background-color:none">
+                  <td style="border:none;padding:2px; background-color:transparent;">
+                    <div class="businessCard">
+                      <img src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0" style="width:3.28in">
+                    </div>
+                  </td>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div style="width:auto;top:0" class="content-block">
           <router-view></router-view>
