@@ -1,73 +1,59 @@
 <template>
   <div class="page-host">
     <div class="${currentStyles.sidebarClass} drawer-container" style="display:none">
-      <div class="drawer" style="display: none !important;background-color: #c0c0c0">
-        <div class="navImage" if.bind="widescreen">
-          <img alt="lutherRose" class="sideNavTopLogo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Lutherrose.svg/800px-Lutherrose.svg.png">
+      <p style="padding-top:5px;padding-left:5px">Tro-Peaks Adventures Ltd.<br>
+        <a class="email" href="https://www.google.com/maps/place/Moshi+Urban,+Tanzania/@-3.5287124,37.2597798,11z/data=!3m1!4b1!4m5!3m4!1s0x18382f0f5a223887:0xaff7235006d15860!8m2!3d-3.527647!4d37.4254444" target="_blank">
+          Moshi-Kilimanjaro, Tanzania
+        </a><br>
+        Cell: +255 763 830820<br>
+        Cell: +255 756 728700<br>
+        <a class="email" href="mailto:tropeaksadventures@gmail.com">
+          Email: tropeaksadventures<br>@gmail.com
+        </a>
+      </p>
+      <div class="drawer" style="display: none !important;background-color: #9cbafa">
+        <div style="background-color:#9cbafa;width:220px;">
         </div>
-        <div if.bind="!fullmenu" class="material-header ${currentStyles.headerClass}" style="width: 63px; height:91px"></div>
-        <div class="nav-list">
-          <div>
-            <p style="font-size:1px;margin-bottom:2px">&nbsp;</p>
-          </div>
-          <div class="menu-item" style="background-color:#244a8bff" if.bind="!authenticated">
-            <p style="color:white;margin-bottom:2px">210 S. College Ave<br>Salem, VA 24153<br>
-              <a href="https://www.google.com/maps/dir/Salem,+Virginia+24153/College+Lutheran+Church,+210+S+College+Ave,+Salem,+VA+24153/@37.2925694,-80.056487,17z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x884d0a3455d08057:0x5a45aeb585040b01!2m2!1d-80.0547626!2d37.2934681!1m5!1m1!1s0x884d0a32d6f01edf:0x88dc0d7faccf632b!2m2!1d-80.053834!2d37.291714">
-                Directions
-              </a>
-            </p>
-          </div>
-          <div>
-            <p style="font-size:1px;margin-bottom:2px">&nbsp;</p>
-          </div>
-          <div class="menu-item" style="background-color:#244a8bff" if.bind="!authenticated">
-            <p style="color:white;margin-bottom:2px"><span style="color:white">ph:</span>
-              <a href="tel:5403894963">(540) 389-4963</a>
-              <br><span style="color:white">fax:</span> (540) 389-4980<br>
-              <a style="word-wrap: break-word;" href="mailto:office1@collegelutheran.org">
-                office1@collegelutheran.org
-              </a>
-            </p>
-          </div>
+        <div class="nav-list" style="top:150px;background-color: #e6eefe">
           <div class="menu-item" if.bind="authenticated">
             <a href="/dashboard" class="nav-link" click.delegate="close()">
               <span class="fa fa-tachometer"></span>
-              <span class="nav-item">${dashboardTitle}</span>
+              <span class="nav-item">Admin</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="/booking" class="nav-link" click.delegate="close()">
+              <span class="fa fa-user-plus" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Contact & Booking</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="/testimonials" class="nav-link" click.delegate="close()">
+              <span class="fa fa-bullhorn" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Testimonials</span>
             </a>
           </div>
           <div class="menu-item" if.bind="currentRoute !=='staff'">
             <a href="/staff" class="nav-link" click.delegate="close()">
-              <span class="fa fa-users" aria-hidden="true"></span>
+              <span class="fa fa-pied-piper-alt" aria-hidden="true"></span>
               <span class="nav-item" if.bind="fullmenu">Staff</span>
-            </a>
-          </div>
-          <div class="menu-item">
-            <a href="/youth" class="nav-link" click.delegate="close()">
-              <span class="fa fa-futbol-o " aria-hidden="true"></span>
-              <span class="nav-item" if.bind="fullmenu">Youth Ministry</span>
-            </a>
-          </div>
-          <div class="menu-item">
-            <a href="/news" class="nav-link" click.delegate="close()">
-              <span class="fa fa-newspaper-o" aria-hidden="true"></span>
-              <span class="nav-item" if.bind="fullmenu">News & Forum</span>
             </a>
           </div>
           <div class="menu-item" if.bind="currentRoute !=='' && currentRoute !=='home'">
             <a href="/" class="nav-link" click.delegate="close()">
-              <span class="fa fa-heart" aria-hidden="true"></span>
+              <span class="fa fa-eye" aria-hidden="true"></span>
               <span class="nav-item" if.bind="fullmenu">Home</span>
             </a>
           </div>
           <div class="menu-item" if.bind="!authenticated && currentRoute ==='staff'" style="text-align:center;margin:center">
             <a class="nav-link" click.delegate="authenticate('google')" style=" padding-right:4px">
-              <span class="fa fa-sign-out nav-item" style="cursor: pointer; cursor: hand;"></span>
+              <span class="fa fa-sign-in nav-item" style="cursor: pointer; cursor: hand;color:#760908"></span>
             </a>
             <button click.delegate="authenticate('google')">Login</button>
           </div>
           <div class="menu-item" if.bind="authenticated">
             <a class="nav-link" click.delegate="logout()" style=" padding-right:4px">
-              <span class="fa fa-sign-out nav-item" style="cursor: pointer; cursor: hand;"></span>
+              <span class="fa fa-sign-out nav-item" style="cursor: pointer; cursor: hand;color:#760908"></span>
             </a>
             <button click.delegate="logout()" class="material-content-button">
               Logout
@@ -77,50 +63,68 @@
       </div>
     </div>
     <div main class="main-panel">
-      <i click.delegate="toggleMobileMenu('open')" id="mobilemenutoggle" class="fa fa-bars pull-right fa-1.5x mobile-menu-toggle" aria-hidden="true" show.bind="!widescreen"></i>
+      <i click.delegate="toggleMobileMenu('open')" style="color:#760908" id="mobilemenutoggle" class="fa fa-bars pull-right fa-lg mobile-menu-toggle" aria-hidden="true" show.bind="!widescreen"></i>
       <div class="mainPanel">
         <div class="swipe-area">
           <div class="p-5 d-block"></div>
         </div>
-        <div class="material-header ${currentStyles.headerClass}">
-          <div class="headercontent">
+        <div class="material-header ${currentStyles.headerClass}" style="height:150px;background-color:#9cbafa;position:relative;z-index:9999">
+          <div style="margin:auto; top:6px" if.bind="widescreen">
+            <table>
+              <tbody class="formatting" style="background-color:none">
+                <tr class="formatting" style="background-color:none">
+                  <td style="border:none;padding-top:18px; background-color:transparent">
+                    <img src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0">
+                  </td>
+                  <!-- <td style="border:none;padding-left:2in;width:4in"></td> -->
+              </tbody>
+            </table>
           </div>
-          <div>
-            <div style="margin-left:5px; margin-top:-8px">
-              <table style="margin-left:5px;">
-                <tbody class="formatting" style="background-color:none">
-                  <tr class="formatting" style="background-color:none">
-                    <td style="border:none;padding:0;width:80%">
-                      <h2 class="header-text" style="margin-bottom:0">
-                        <a class="header-text" href="/" style="text-align:left;text-decoration: none">
-                          College Lutheran <span if.bind="widescreen" style="font-size:19pt">Church</span>
-                        </a>
-                        <span if.bind="!widescreen" style="font-size:19pt">Church</span></h2>
-                      <p style="max-width:80%" class="subTitle">We celebrate God's grace and share His love in Christ!</p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="cardBack" style="background-color:#9cbafa;display:none;position:fixed;top:0;height:138px;width:340px">
+            <p style="padding-top:10px;padding-left:16px">Tro-Peaks Adventures Ltd.<br>
+              <a class="email" href="https://www.google.com/maps/place/Moshi+Urban,+Tanzania/@-3.5287124,37.2597798,11z/data=!3m1!4b1!4m5!3m4!1s0x18382f0f5a223887:0xaff7235006d15860!8m2!3d-3.527647!4d37.4254444" target="_blank">
+                Moshi-Kilimanjaro, Tanzania
+              </a><br>
+              Cell: +255 763 830820<br>
+              Cell: +255 756 728700<br>
+              Email:
+              <a class="email" href="mailto:tropeaksadventures@gmail.com">
+                tropeaksadventures@gmail.com
+              </a>
+            </p>
+          </div>
+          <div style="margin:auto; top:0" if.bind="!widescreen">
+            <table>
+              <tbody class="formatting" style="background-color:none">
+                <tr class="formatting" style="background-color:none">
+                  <td style="border:none;padding:2px; background-color:transparent;">
+                    <div class="businessCard">
+                      <img src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0" style="width:3.28in">
+                    </div>
+                  </td>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div style="width:auto;" class="content-block">
+        <div style="width:auto;top:0" class="content-block">
           <router-view></router-view>
-          <div id="wjfooter" class="footer" style="margin-top:20px">
+          <div id="wjfooter" class="footer" style="margin-top:20px;background-color:#9cbafa">
             <div style="text-align: center;padding:16px;margin-bottom:0;margin-top:0;padding-top:30px;padding-bottom:30px">
-              <a target="_blank" style="z-index:16777271;color:#f4c00eff;padding-right:5px;text-decoration:none; border:none" href="https://twitter.com/CollegeLutheran">
-                <i class="fa fa-twitter fa-2x footerIcon" aria-hidden="true">
-                </i>
-              </a>
-              <a target="_blank" style="text-decoration:none; border:none;z-index:16777271;color:#f4c00eff;padding-right:5px" href="https://www.facebook.com/CollegeLutheranChurch/">
+              <a target="_blank" style="text-decoration:none; border:none;z-index:16777271;color:#760908;padding-right:5px" href="https://www.facebook.com/tropeaks/">
                 <i class="fa fa-facebook-square fa-2x footerIcon" aria-hidden="true">
                 </i>
               </a>
-              <a target="_blank" style="text-decoration:none;border:none;z-index:16777271;color:#f4c00eff;padding-right:5px" href="https://www.instagram.com/collegelutheranchurch/">
-                <i class="fa fa-instagram fa-2x footerIcon" aria-hidden="true">
+              <a target="_blank" style="text-decoration:none; border:none;z-index:16777271;color:#760908;padding-right:8px" href="https://www.tripadvisor.com/ShowUserReviews-g293750-d459953-r395117646-Mount_Kilimanjaro-Kilimanjaro_National_Park_Kilimanjaro_Region.html">
+                <i class="fa fa-tripadvisor fa-2x footerIcon" aria-hidden="true">
                 </i>
               </a>
-              <span style="z-index: 16777271;margin-left:26px;color:white; font-size: 9pt;margin-bottom:0">
+              <a target="_blank" style="text-decoration:none; border:none;z-index:16777271;padding-right:8px;" href="https://www.lifeasabutterfly.com/tro-peaks-adventures-five-star-review/">
+                <img src="https://i1.wp.com/www.lifeasabutterfly.com/wp-content/uploads/47375805_2278917658786276_5382992793952059392_n-2.png?w=2000&ssl=1" style="width:60px;padding-bottom:14px">
+              </a>
+              <a target="_blank" style="text-decoration:none; border:none;z-index:16777271;padding-right:8px;" href="https://www.lonelyplanet.com/thorntree/forums/africa/tanzania/kilimanjaro-with-tro-peaks-adventures-just-amazing">
+                <img src="https://dl.dropboxusercontent.com/s/73az6yujogg3vcu/Screenshot%20at%202019-03-19%2016-53-33.png?dl=0" style="width:60px;padding-bottom:12px">
+              </a>
+              <br><span style="z-index: 16777271;color:white; font-size: 10pt;margin-bottom:0">
                 Powered by <a class="wjllc" target="_blank" href="https://www.web-jam.com">Web Jam LLC
                 </a>
               </span>

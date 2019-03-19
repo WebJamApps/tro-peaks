@@ -51,15 +51,17 @@ form {
 }
 
 h1 {
-  font-size: 34px;
-}
-
-h2 {
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 38px;
 }
 
+h2 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 34px;
+}
+
 h3 {
-  font-weight: bold;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 24px;
 }
 
@@ -69,6 +71,7 @@ h3.au-target.header-text.ohaf-header {
 }
 
 h4 {
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 18px;
 }
 
@@ -83,8 +86,9 @@ h1, h2, h3, h4, h5 {
 }
 
 p, a, label {
-  font-family: 'Trebuchet MS', 'ChivoBlack', Arial, Helvetica, sans-serif;
+  font-family: Verdana, sans-serif;
   font-size: 12pt;
+  line-height: 1.5;
 }
 
 input {
@@ -98,7 +102,6 @@ input.checkboxes-input {
 }
 
 label {
-  /* font-size: 11pt; */
   padding-top: 20px;
   margin-bottom: 0;
   padding-bottom: 1px;
@@ -167,7 +170,6 @@ tbody.regformtbody td {
 }
 
 div.RegistrationForm {
-  /* max-width: 90%; */
   margin: auto;
 }
 
@@ -367,7 +369,7 @@ div.slick-track {
 }
 
 .home-sidebar {
-  background-color: #c0c0c0;
+  background-color: #9cbafa;
 }
 
 #mobilemenutoggle {
@@ -462,7 +464,7 @@ div.slick-track {
 }
 
 .menu-item {
-  padding-left: 10px;
+  padding-left: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -491,7 +493,7 @@ div.slick-track {
 
 .mobile-menu-toggle {
   position: fixed;
-  top: 32px;
+  top: 10px;
   right: 16px;
   background-color: #c0c0c0;
   color: #f4c00eff;
@@ -679,6 +681,10 @@ a {
   color: #409cff
 }
 
+a.email {
+  color: #760908
+}
+
 button {
   cursor: pointer;
   cursor: hand;
@@ -697,7 +703,7 @@ a:hover {
   padding-bottom: 6px;
   padding-left: 0;
   display: block !important;
-  color: #23527c;
+  color: #760908;
   outline: none !important;
 }
 
@@ -763,7 +769,7 @@ a:hover {
 
 .nav-list {
   position: fixed;
-  top: 91px;
+  top: 198px;
   right: 0;
   width: 220px;
   height: 100%;
@@ -829,7 +835,7 @@ a:hover {
     min-height: 45vh !important;
   }
 
-  .slick-slide > div > div > img {
+  .slick-slide>div>div>img {
     width: 100% !important;
   }
 

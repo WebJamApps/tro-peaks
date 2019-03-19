@@ -13,6 +13,7 @@ const utils = require('./commons/utils');
 @inject(AuthService, HttpClient)
 export class App {
   constructor(auth, httpClient) {
+    this.menuOpen = false;
     this.auth = auth;
     this.httpClient = httpClient;
     this.dashboardTitle = 'Dashboard';
@@ -69,9 +70,15 @@ export class App {
         auth: true,
         settings: 'fa fa-tachometer' },
       { route: 'calendar', name: 'calendar', moduleId: PLATFORM.moduleName('./calendar'), nav: false, title: 'Calendar', settings: 'fa fa-music' },
+      { route: 'booking', name: 'booking', moduleId: PLATFORM.moduleName('./booking'), nav: false, title: 'Booking', settings: 'fa fa-music' },
       { route: ['', 'home'], name: 'home', moduleId: PLATFORM.moduleName('./home'), nav: false, title: '', settings: 'fa fa-home' },
       { route: 'staff', name: 'staff', moduleId: PLATFORM.moduleName('./staff'), nav: false, title: 'Staff', settings: 'fa fa-users' },
-      { route: 'youth', name: 'youth', moduleId: PLATFORM.moduleName('./youth'), nav: false, title: 'Youth Ministry', settings: 'fa fa-users' },
+      { route: 'testimonials',
+        name: 'testimonials',
+        moduleId: PLATFORM.moduleName('./testimonials'),
+        nav: false,
+        title: 'Testimonials',
+        settings: 'fa fa-users' },
     ]);
   }
 
@@ -94,13 +101,24 @@ export class App {
     config.fallbackRoute('/');
     this.router = router;
   }
+  switchBusinessCard() {
+    const cardBack = document.getElementsByClassName('cardBack')[0];
+    const businessCard = document.getElementsByClassName('businessCard')[0];
+    businessCard.innerHTML = '<img '
+    + 'src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0" style="width:3.28in">';
+    cardBack.style.display = 'none';
+  }
 
   toggleMobileMenu(toggle) {
+    const cardBack = document.getElementsByClassName('cardBack')[0];
+    const businessCard = document.getElementsByClassName('businessCard')[0];
+    businessCard.innerHTML = '<img src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0" style="width:3.28in">';
     document.getElementsByClassName('page-host')[0].style.overflow = 'auto';
     if (toggle !== 'close') {
       document.getElementsByClassName('page-host')[0].style.overflow = 'hidden';
       document.getElementsByClassName('swipe-area')[0].style.width = '60px';
       document.getElementsByClassName('page-host')[0].addEventListener('click', this.appUtils.clickFunc);
+      document.getElementsByClassName('page-host')[0].addEventListener('click', this.switchBusinessCard);
     }
     this.menuToggled = true;
     const drawer = document.getElementsByClassName('drawer')[0];
@@ -109,10 +127,14 @@ export class App {
       drawer.style.display = 'block';
       $(drawer).parent().css('display', 'block');
       toggleIcon.style.display = 'none';
+      cardBack.style.display = 'block';
+      businessCard.innerHTML = '';
     } else {
       drawer.style.display = 'none';
       $(drawer).parent().css('display', 'none');
       toggleIcon.style.display = 'block';
+      businessCard.innerHTML = '<img src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0" style="width:3.28in">';
+      cardBack.style.display = 'none';
     }
     if (toggle === 'close') {
       document.getElementsByClassName('page-host')[0].removeEventListener('click', this.appUtils.clickFunc);
@@ -140,17 +162,11 @@ export class App {
     return null;
   }
 
-  setFooter() {
-    const footer = document.getElementById('wjfooter');
-    if (footer !== null) footer.style.backgroundColor = '#244a8bff';
-  }
-
   get currentStyles() {
     const result = { headerClass: 'home-header',
       headerImageClass: 'home-header-image',
       sidebarClass: 'home-sidebar',
       menuToggleClass: 'home-menu-toggle' };
-    this.setFooter();
     this.setOtherStyles();
     return result;
   }
@@ -160,15 +176,36 @@ export class App {
     const navList = document.getElementsByClassName('nav-list')[0];
     const mobilemenutoggle = document.getElementById('mobilemenutoggle');
     if (menuDrawer !== undefined && menuDrawer !== null) {
-      mobilemenutoggle.style.backgroundColor = '#244a8bff';
-      menuDrawer.style.backgroundColor = '#c0c0c0';
-      navList.style.backgroundColor = '#c0c0c0';
+      mobilemenutoggle.style.backgroundColor = 'rgb(156, 186, 250)';
+      menuDrawer.style.backgroundColor = '#e6eefe';
+      navList.style.backgroundColor = '#e6eefe';
     }
   }
 
+  troWide(hh, nl, cardBack) {
+    if (hh !== undefined) hh.style.height = '150px';
+    if (nl !== undefined) nl.style.top = '150px';
+    if (cardBack !== undefined) cardBack.style.display = 'none';
+  }
+
+  troCell() {
+    const businessCard = document.getElementsByClassName('businessCard')[0];
+    const cardBack = document.getElementsByClassName('cardBack')[0];
+    const hh = document.getElementsByClassName('home-header')[0];
+    const nl = document.getElementsByClassName('nav-list')[0];
+    if (document.documentElement.clientWidth < 900) {
+      if (hh !== undefined) hh.style.height = '137px';
+      if (nl !== undefined) nl.style.top = '138px';
+      if (businessCard !== undefined) {
+        businessCard.innerHTML = '<img src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0" style="width:3.28in">';
+      }
+    } else this.troWide(hh, nl, cardBack);
+  }
+
   get widescreen() {
+    this.troCell();
     return this.appUtils.handleScreenSize(this, document.documentElement.clientWidth > 900,
-      $(document.getElementsByClassName('drawer')).parent(), 'returnIsWideCLC');
+      $(document.getElementsByClassName('drawer')).parent(), 'returnIsWide');
   }
 
   attached() {
