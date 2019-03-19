@@ -162,17 +162,11 @@ export class App {
     return null;
   }
 
-  setFooter() {
-    const footer = document.getElementById('wjfooter');
-    if (footer !== null) footer.style.backgroundColor = '#9cbafa';
-  }
-
   get currentStyles() {
     const result = { headerClass: 'home-header',
       headerImageClass: 'home-header-image',
       sidebarClass: 'home-sidebar',
       menuToggleClass: 'home-menu-toggle' };
-    this.setFooter();
     this.setOtherStyles();
     return result;
   }
@@ -188,7 +182,13 @@ export class App {
     }
   }
 
-  get widescreen() {
+  troWide(hh, nl, cardBack) {
+    if (hh !== undefined) hh.style.height = '150px';
+    if (nl !== undefined) nl.style.top = '150px';
+    if (cardBack !== undefined) cardBack.style.display = 'none';
+  }
+
+  troCell() {
     const businessCard = document.getElementsByClassName('businessCard')[0];
     const cardBack = document.getElementsByClassName('cardBack')[0];
     const hh = document.getElementsByClassName('home-header')[0];
@@ -199,11 +199,11 @@ export class App {
       if (businessCard !== undefined) {
         businessCard.innerHTML = '<img src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0" style="width:3.28in">';
       }
-    } else {
-      if (hh !== undefined) hh.style.height = '150px';
-      if (nl !== undefined) nl.style.top = '150px';
-      if (cardBack !== undefined) cardBack.style.display = 'none';
-    }
+    } else this.troWide(hh, nl, cardBack);
+  }
+
+  get widescreen() {
+    this.troCell();
     return this.appUtils.handleScreenSize(this, document.documentElement.clientWidth > 900,
       $(document.getElementsByClassName('drawer')).parent(), 'returnIsWide');
   }

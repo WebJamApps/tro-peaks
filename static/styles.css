@@ -51,17 +51,17 @@ form {
 }
 
 h1 {
-  font-family: "Segoe UI",Arial,sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 38px;
 }
 
 h2 {
-  font-family: "Segoe UI",Arial,sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 34px;
 }
 
 h3 {
-  font-family: "Segoe UI",Arial,sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 24px;
 }
 
@@ -71,7 +71,7 @@ h3.au-target.header-text.ohaf-header {
 }
 
 h4 {
-  font-family: "Segoe UI",Arial,sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 18px;
 }
 
@@ -86,9 +86,9 @@ h1, h2, h3, h4, h5 {
 }
 
 p, a, label {
-  font-family: Verdana,sans-serif;
+  font-family: Verdana, sans-serif;
   font-size: 12pt;
-  line-height:1.5;
+  line-height: 1.5;
 }
 
 input {
@@ -681,7 +681,7 @@ a {
   color: #409cff
 }
 
-a.email{
+a.email {
   color: #760908
 }
 
@@ -835,7 +835,7 @@ a:hover {
     min-height: 45vh !important;
   }
 
-  .slick-slide > div > div > img {
+  .slick-slide>div>div>img {
     width: 100% !important;
   }
 
