@@ -1,7 +1,7 @@
 <template>
   <div class="page-host">
     <div class="${currentStyles.sidebarClass} drawer-container" style="display:none">
-      <p style="padding-top:5px;padding-left:5px">Tro-Peaks Adventures Ltd.<br>
+      <p if.bind="widescreen" style="padding-top:5px;padding-left:5px"><strong><i>Tro-Peaks Adventures Ltd.</i></strong><br>
         <a class="email" href="https://www.google.com/maps/place/Moshi+Urban,+Tanzania/@-3.5287124,37.2597798,11z/data=!3m1!4b1!4m5!3m4!1s0x18382f0f5a223887:0xaff7235006d15860!8m2!3d-3.527647!4d37.4254444" target="_blank">
           Moshi-Kilimanjaro, Tanzania
         </a><br>
@@ -80,8 +80,8 @@
               </tbody>
             </table>
           </div>
-          <div class="cardBack" style="background-color:#9cbafa;display:none;position:fixed;top:0;height:138px;width:340px">
-            <p style="padding-top:10px;padding-left:16px">Tro-Peaks Adventures Ltd.<br>
+          <div class="cardBack" style="background-color:#9cbafa;display:none;position:fixed;top:0;height:138px;width:100%;margin:auto">
+            <p style="padding-top:10px;padding-left:16px"><strong><i>Tro-Peaks Adventures Ltd.</i></strong><br>
               <a class="email" href="https://www.google.com/maps/place/Moshi+Urban,+Tanzania/@-3.5287124,37.2597798,11z/data=!3m1!4b1!4m5!3m4!1s0x18382f0f5a223887:0xaff7235006d15860!8m2!3d-3.527647!4d37.4254444" target="_blank">
                 Moshi-Kilimanjaro, Tanzania
               </a><br>
@@ -106,7 +106,7 @@
             </table>
           </div>
         </div>
-        <div style="width:auto;top:0" class="content-block">
+        <div style="width:auto;top:0;background-color:#636679" class="content-block">
           <router-view></router-view>
           <div id="wjfooter" class="footer" style="margin-top:20px;background-color:#9cbafa">
             <div style="text-align: center;padding:16px;margin-bottom:0;margin-top:0;padding-top:30px;padding-bottom:30px">
