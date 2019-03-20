@@ -15,7 +15,7 @@ const ensureArray = config => config && (Array.isArray(config) ? config : [confi
 const when = (condition, config, negativeConfig) => (condition ? ensureArray(config) : ensureArray(negativeConfig));
 
 // primary config:
-const title = 'Tro-Peaks Adventures';
+const title = 'Tro-Peaks';
 const outDir = path.resolve(__dirname, 'dist');
 const srcDir = path.resolve(__dirname, 'src');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
