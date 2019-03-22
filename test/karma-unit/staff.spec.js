@@ -8,7 +8,7 @@ describe('the Staff Module', () => {
   });
 
   it('checks that widescreen is boolean', (done) => {
-    expect(typeof staff.widescreenHomepage).toBe('boolean');
+    expect(typeof staff.widescreenPage).toBe('boolean');
     done();
   });
 });

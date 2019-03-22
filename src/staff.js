@@ -1,5 +1,5 @@
 export class Staff {
-  get widescreenHomepage() { return document.documentElement.clientWidth > 1200; }
+  get widescreenPage() { return document.documentElement.clientWidth > 900; }
   jump(h) {
     document.getElementById(h).scrollIntoView();
   }
