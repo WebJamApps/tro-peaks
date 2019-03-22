@@ -1,51 +1,35 @@
 <template>
-  <require from="./components/pic-slider"></require>
   <div class="page-content">
     <a id="top"></a>
     <div>
-      <div style="height:55px">
-        <p>&nbsp;</p>
-      </div>
       <div class="container-fluid">
-        <p style="font-size:4pt;margin:0">&nbsp;</p>
-        <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto">
-          <h3 style="padding-top:22px;padding-bottom:15px;font-weight:100">Youth Ministry</h3>
-          <p>
-            <span style="color: rgb(0, 51, 102);">
-              <strong>
-                <i>&quot;Think of us in this way, as servants of Christ and stewards of God’s mysteries.&quot;</i>&nbsp;&nbsp;&nbsp;1 Corinthians 4:1
-              </strong>
-            </span>
-          </p>
-          <p>
-            Youth ministry (6th- 12th grades) at College Lutheran church focuses on God’s mysteries and serving Christ. We are deeply committed to helping students explore and live out their faith. Weekly Sunday school, worship, and youth group, as
-            well as annual Virginia Synod youth events challenge our students to think deeply about their religious beliefs and build on the foundations of the Christian faith. These gatherings provide dynamic contexts for students to examine how
-            real-world issues and religion are intertwined. We believe that when our students are encouraged to think about what they believe and ask questions, they develop a stronger faith that can withstand the complexities of the teen years and
-            adulthood.
-          </p>
-          <p>
-            <span style="color: rgb(0, 51, 102);">
-              <strong>
-                <i>&quot;Faith without works is dead.&quot;</i>&nbsp;&nbsp;&nbsp;James 2:17
-              </strong>
-            </span>
-          </p>
-          <p>
-            Not only do our youth have faith, but they show it at every opportunity! Youth at CLC are lifted up and celebrated as essential members in the worship, service, and recreational life of
-            the congregation. They assist in worship as acolytes, crucifers, communion assistants, assisting ministers, ushers, greeters, coffee hour hosts, and children’s sermon speakers. They serve the community through events such as the CROP
-            walk for hunger, Trick or Treat So Others May Eat, Trunk or Treating, Souper Bowl Sunday, and environmental initiatives. And, they are always excited about fun youth group events like snowtubing, bowling, and hiking!<br><br>We invite you
-            to
-            come be part of our active, growing youth ministry program at any or all of our upcoming events. For more information about our youth ministry program or to become a volunteer, contact Grace Casola at <a href="mailto:gracecasola@collegelutheran.org">gracecasola@collegelutheran.org</a>
-          </p>
-          <section style="text-align:left;margin-top:0" innerhtml.bind="youthPageContent.comments | sanitizeHTML"></section>
+        <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
+          <h3 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:80px">Contact & Booking</h3>
+          <h3 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px">Contact & Booking</h3>
+          <p> At Tro-Peaks Adventures we have dedicated office staff, safari and climbing teams and the best quality equipment, which we maintain
+            to the highest standard. We are here to make your trip just as you had always dreamt it would be. we will work with you on an individual
+            basis to modify the itineraries listed here to suit your needs. The basic procedure is as follows:</p>
+          <ul>
+            <li>After we receive your price quote request, we will discuss your individual needs and perhaps make some suggestions for your itinerary. </li>
+            <li>Once we have the details in place we will send you a price quote.</li>
+            <li>You can choose which of the options you like best or perhaps discuss
+              with us how to further modify your trip.</li>
+            <li> Upon agreeing on the itinerary and the price we confirm availabilty of accommodations and then
+              will send you a confirmation along with your payment options.</li>
+          </ul>
+          <div style="margin:auto;text-align:left;max-width:4.5in">
+            <p>To send your details & request a quotation, contact us at:</p>
+            <p style="text-align:left"><strong><i>Tro-Peaks Adventures Ltd.</i></strong><br>
+              Email: <a href="mailto:tropeaksadventures@gmail.com" target="_blank">tropeaksadventures@gmail.com</a><br>
+              Cell: +255 763 830820 / +255 756 728700</p><br>
+          </div>
+          <h4>Cancellations / Trip Postponements</h4>
+          <p>If a date postponement or cancellation is required, 100% of your deposit will go towards the new date or be refunded
+            (less bank wire transfer fees). The exception being in cases of last minute postponements where there is insufficient notice for lodges
+            to refund your deposit.</p><br>
+          <p>Looking to join an existing group? <a href="/groups">Group Climb Dates</a></p>
         </div>
-        <div style="text-align:center;margin:auto;padding-top:0;padding-bottom:-40px">
-          <!-- <a href="http://www.elca.org/" target="_blank">
-            <img id="elcaLogo" alt="ELCA LOGO" src="https://dl.dropboxusercontent.com/s/wkzubcmmm3pqst4/elca-logo.png?dl=0" style="width: 350px;margin:auto;">
-          </a> -->
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
+        <div>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
         </div>

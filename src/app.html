@@ -39,6 +39,12 @@
               <span class="nav-item" if.bind="fullmenu">Staff</span>
             </a>
           </div>
+          <div class="menu-item">
+            <a href="/groups" class="nav-link" click.delegate="close()">
+              <span class="fa fa-handshake-o" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Join a Group</span>
+            </a>
+          </div>
           <div class="menu-item" if.bind="currentRoute !=='' && currentRoute !=='home'">
             <a href="/" class="nav-link" click.delegate="close()">
               <span class="fa fa-eye" aria-hidden="true"></span>

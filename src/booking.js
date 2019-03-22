@@ -8,7 +8,6 @@ import {
 @inject(App)
 export class Booking {
   constructor(app) { this.app = app; }
-  get widescreenYouthpage() { return document.documentElement.clientWidth > 1200; }
-  // activate() { return this.app.commonUtils.pageSetup(this, 'youth', sessionStorage); }
+  get widescreenPage() { return document.documentElement.clientWidth > 900; }
   attached() { document.getElementById('top').scrollIntoView(); }
 }
