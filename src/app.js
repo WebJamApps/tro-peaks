@@ -73,6 +73,7 @@ export class App {
       { route: 'booking', name: 'booking', moduleId: PLATFORM.moduleName('./booking'), nav: false, title: 'Booking', settings: 'fa fa-music' },
       { route: ['', 'home'], name: 'home', moduleId: PLATFORM.moduleName('./home'), nav: false, title: '', settings: 'fa fa-home' },
       { route: 'staff', name: 'staff', moduleId: PLATFORM.moduleName('./staff'), nav: false, title: 'Staff', settings: 'fa fa-users' },
+      { route: 'groups', name: 'groups', moduleId: PLATFORM.moduleName('./groups'), nav: false, title: 'Join a Group', settings: 'fa fa-users' },
       { route: 'testimonials',
         name: 'testimonials',
         moduleId: PLATFORM.moduleName('./testimonials'),
@@ -104,8 +105,10 @@ export class App {
   switchBusinessCard() {
     const cardBack = document.getElementsByClassName('cardBack')[0];
     const businessCard = document.getElementsByClassName('businessCard')[0];
-    businessCard.innerHTML = '<img '
+    if (businessCard !== undefined) {
+      businessCard.innerHTML = '<img '
     + 'src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0" style="width:3.28in">';
+    }
     cardBack.style.display = 'none';
   }
 
