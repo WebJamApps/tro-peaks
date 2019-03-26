@@ -1,56 +1,79 @@
 <template>
-  <require from="./components/pic-slider"></require>
   <div class="page-content">
     <a id="top"></a>
+    <div class="container-fluid">
+      <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
+        <h3 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:80px">Testimonials</h3>
+        <h3 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px">Testimonials</h3>
+        <ul>
+          <li>We invite you to read a blog by one of our clients <a href="http://benlittlechilds.blogspot.com/2014/02/days-leading-to-big-hike.html" target="_blank">here</a>.
+          </li><br>
+          <li> You can find recommendations for Tro-Peaks on Trip Advisor website here:
+            <a href="https://www.tripadvisor.com/ShowTopic-g293750-i11370-k6786016-Excellent_Kili_climb_with_Tro_Peaks-Kilimanjaro_National_Park_Kilimanjaro_Region.html" target="_blank">Trip Advisor Comments</a>
+          </li><br>
+          <li>Tro-Peaks received a five star review on this
+            <a href="https://www.lifeasabutterfly.com/tro-peaks-adventures-five-star-review/" target="_blank">website</a>.
+          </li>
+        </ul><br>
+        <h4>Want even more client testimonials? Read below...</h4><br>
+        <div class="client-comments">
+          <div>
+            <p>&ldquo;Daniel&rsquo;s input into my Kilimanjaro climb was pivotal.&nbsp; His experience, wisdom and knowledge are beyond his years.
+              His quiet, friendly and confident style is absolutely what we needed &ndash; Daniel is the perfect guide. Knowing he was in control meant our sole
+              concern was to put one foot in front of the other. Anyone lucky enough to launch on a trek with Daniel starts off with a huge advantage and is in
+              for a special experience.&rdquo; <br><strong>Marcus Beale</strong></p>
+          </div>
+          <div>
+            <p>&#34;Daniel is patient, kind and extremely hard working. His fitness is unsurpassable and his ability to manage complex and often dangerous
+              situations is inspiring. He helped me down the mountain after I got altitude sickness and immediately (and literally) ran up the mountain to join
+              the rest of the team. He is a caring and supportive team leader and he gains the respect of his colleagues by setting an excellent example to others.
+              He has deep integrity and strong personal charisma.&#34;<br> <strong>Jamie Large</strong></p>
+          </div>
+          <div>
+            <p>&ldquo;Daniel led a team of six of us up Kilimanjaro two years ago. I cannot speak too highly of him. He is intelligent, personable, thoughtful,
+              attentive and most important of all, extremely competent. He has a great knowledge of the environment and huge experience of the mountain and its
+              climatic conditions. Over our seven day trip he became a very good and trusted friend to us all. I wouldn&#39;t hesitate to go with Daniel again,
+              but at 69 my camping days are over...&rdquo;<br><strong> Robin</strong></p>
+          </div>
+
+          <div>
+            <p>&quot;Daniel was a perfect guide. He is athletic, supportive, enthusiastic, professional, and very knowledgeable about the environment. He
+              recently guided my multi-cultural group, including some Japanese people, and was helpful to us all. He obviously genuinely loves what he is doing
+              and takes personal pride in making hikers happy. I would happily hike with him again....&quot;<br><strong>Ryan Rutledge </strong></p>
+          </div>
+          <div>
+            <p>
+              "In December I climbed Mt. Kilimanjaro with 4 friends. It was the most incredible trip of our lives because of the
+              hard work of Daniel and Tro-Peaks Adventure. For 5 months we stayed in close contact with Daniel as he organized every minuet
+              detail of our trip - from our transportation from Nairobi to Moshi to the incredible safari itinerary that he put together
+              before our climb to the climb itself which was flawless in every way, to our transportation back to Nairobi. His staff was
+              incredibly friendly, helpful, and knowledgeable and I speak on behalf of the entire group when I say KUDOS to Daniel for
+              being an incredible guide!!! We were beyond happy with the way everything turned out and we highly recommend him and his
+              services to anyone that is considering either a safari in Tanzania or the adventure of a lifetime on Mt. Kilimanjaro.
+              GREAT WORK Daniel! We&#39;ll be back again soon!"<br> <strong>Ema Pasic</strong></p>
+          </div>
+          <div>
+            <p>&#34;I heard about Tro-Peaks through a friend who had hiked with Daniel and suggested that my friends and I do the same. We were definitely
+              happy with the recommendation. Daniel was incredibly helpful, from planning the trip, all the way to the summit of Kili. He was very
+              knowledgeable about the mountain and made for an awesome guide. The meals were great too. He even brought us to his house after the trek to
+              meet his family and have a beer. Highly recommend.&#34;<br /><strong>Alex Wallash</strong></p>
+          </div>
+
+          <div>
+            <p>&#34;We climbed Kilimanjaro with Daniel - it was one of the best experiences of my life! We found Daniel to be
+              professional, experienced and well organised. He is also very calm, controlled and patient - which is especially essential on the
+              morning of the summit climb! He has a great team and made our experience on Kili a truly memorable one. He takes pride in his guide
+              work and everything we needed was taken care of. He is also very knowledgeable about the region and Tanzania more broadly; we learnt a
+              lot about the country and life in Africa. My girlfriend and I both successfully made it to the summit and it was truly awe-inspiring!
+              I would not hesitate to recommend Daniel as an excellent guide &dash; as I have done to numerous friends in Australia.&#34;<br />
+              <strong>Andrew Mellor</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div>
-      <div>
-        <div id="youthSlideshow" if.bind="!widescreenPage">
-          <picture-slider data.bind="slideshowImages"></picture-slider>
-        </div>
-        <div id="youthSlideshowWide" if.bind="widescreenPage">
-          <picture-slider data.bind="slideshowImages"></picture-slider>
-        </div>
-      </div>
-      <div class="container-fluid">
-        <p style="font-size:4pt;margin:0">&nbsp;</p>
-        <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto">
-          <h3 style="padding-top:22px;padding-bottom:15px;font-weight:100">Youth Ministry</h3>
-          <p>
-            <span style="color: rgb(0, 51, 102);">
-              <strong>
-                <i>&quot;Think of us in this way, as servants of Christ and stewards of God’s mysteries.&quot;</i>&nbsp;&nbsp;&nbsp;1 Corinthians 4:1
-              </strong>
-            </span>
-          </p>
-          <p>
-            Youth ministry (6th- 12th grades) at College Lutheran church focuses on God’s mysteries and serving Christ. We are deeply committed to helping students explore and live out their faith. Weekly Sunday school, worship, and youth group, as
-            well as annual Virginia Synod youth events challenge our students to think deeply about their religious beliefs and build on the foundations of the Christian faith. These gatherings provide dynamic contexts for students to examine how
-            real-world issues and religion are intertwined. We believe that when our students are encouraged to think about what they believe and ask questions, they develop a stronger faith that can withstand the complexities of the teen years and
-            adulthood.
-          </p>
-          <p>
-            <span style="color: rgb(0, 51, 102);">
-              <strong>
-                <i>&quot;Faith without works is dead.&quot;</i>&nbsp;&nbsp;&nbsp;James 2:17
-              </strong>
-            </span>
-          </p>
-          <p>
-            Not only do our youth have faith, but they show it at every opportunity! Youth at CLC are lifted up and celebrated as essential members in the worship, service, and recreational life of
-            the congregation. They assist in worship as acolytes, crucifers, communion assistants, assisting ministers, ushers, greeters, coffee hour hosts, and children’s sermon speakers. They serve the community through events such as the CROP
-            walk for hunger, Trick or Treat So Others May Eat, Trunk or Treating, Souper Bowl Sunday, and environmental initiatives. And, they are always excited about fun youth group events like snowtubing, bowling, and hiking!<br><br>We invite you
-            to
-            come be part of our active, growing youth ministry program at any or all of our upcoming events. For more information about our youth ministry program or to become a volunteer, contact Grace Casola at <a href="mailto:gracecasola@collegelutheran.org">gracecasola@collegelutheran.org</a>
-          </p>
-          <section style="text-align:left;margin-top:0" innerhtml.bind="youthPageContent.comments | sanitizeHTML"></section>
-        </div>
-        <div style="text-align:center;margin:auto;padding-top:0;padding-bottom:-40px">
-          <!-- <a href="http://www.elca.org/" target="_blank">
-            <img id="elcaLogo" alt="ELCA LOGO" src="https://dl.dropboxusercontent.com/s/wkzubcmmm3pqst4/elca-logo.png?dl=0" style="width: 350px;margin:auto;">
-          </a> -->
-          <p>&nbsp;</p>
-        </div>
-      </div>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
     </div>
   </div>
 </template>
