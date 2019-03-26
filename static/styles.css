@@ -134,7 +134,7 @@ table {
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #d8ecf3;
+  background-color: #e6eefe;
 }
 
 tbody.regformtbody tr:nth-child(odd) {
