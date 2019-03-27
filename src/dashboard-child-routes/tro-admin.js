@@ -34,7 +34,7 @@ export class ClcAdmin {
   }
 
   types = ['Monthly'];
-
+  get widescreenPage() { return document.documentElement.clientWidth > 900; }
   async activate() {
     this.app.dashboardTitle = 'CLC Admin';
     const uid = this.app.auth.getTokenPayload().sub;
