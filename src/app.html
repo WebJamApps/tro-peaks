@@ -16,12 +16,6 @@
         </div>
         <div class="nav-list" style="top:150px;background-color: #e6eefe">
           <div class="menu-item">
-            <a href="/" class="nav-link" click.delegate="close()">
-              <span class="fa fa fa-eye" aria-hidden="true"></span>
-              <span class="nav-item" if.bind="fullmenu">Home</span>
-            </a>
-          </div>
-          <div class="menu-item">
             <a href="/booking" class="nav-link" click.delegate="close()">
               <span class="fa fa-user-plus" aria-hidden="true"></span>
               <span class="nav-item" if.bind="fullmenu">Contact & Booking</span>
@@ -33,40 +27,46 @@
               <span class="nav-item" if.bind="fullmenu">Testimonials</span>
             </a>
           </div>
-          <div class="menu-item">
-            <a href="/staff" class="nav-link" click.delegate="close()">
-              <span class="fa fa-pied-piper-alt" aria-hidden="true"></span>
-              <span class="nav-item" if.bind="fullmenu">Staff</span>
-            </a>
-          </div>
-          <div class="menu-item">
+          <div class="menu-item" if.bind="currentRoute !=='mountains' || widescreen">
             <a href="/mountains" class="nav-link" click.delegate="close()">
-              <span class="fa fa-pied-piper-alt" aria-hidden="true"></span>
+              <span class="fa fa-area-chart" aria-hidden="true"></span>
               <span class="nav-item" if.bind="fullmenu">Mountain Climbs</span>
             </a>
           </div>
-          <div class="menu-item">
+          <div class="menu-item" if.bind="currentRoute !=='safaris' || widescreen">
             <a href="/safaris" class="nav-link" click.delegate="close()">
-              <span class="fa fa-pied-piper-alt" aria-hidden="true"></span>
+              <span class="fa fa-paw" aria-hidden="true"></span>
               <span class="nav-item" if.bind="fullmenu">Safaris</span>
             </a>
           </div>
-          <div class="menu-item">
+          <div class="menu-item" if.bind="currentRoute !=='beaches' || widescreen">
             <a href="/beaches" class="nav-link" click.delegate="close()">
-              <span class="fa fa-eye" aria-hidden="true"></span>
+              <span class="fa fa-anchor" aria-hidden="true"></span>
               <span class="nav-item" if.bind="fullmenu">Beach Holidays</span>
             </a>
           </div>
           <div class="menu-item">
             <a href="/day-trips" class="nav-link" click.delegate="close()">
-              <span class="fa fa-eye" aria-hidden="true"></span>
+              <span class="fa fa-shopping-basket" aria-hidden="true"></span>
               <span class="nav-item" if.bind="fullmenu">Day Trips</span>
             </a>
           </div>
-          <div class="menu-item" if.bind="authenticated">
+          <div class="menu-item" if.bind="currentRoute !=='staff' || widescreen">
+            <a href="/staff" class="nav-link" click.delegate="close()">
+              <span class="fa fa-pied-piper-alt" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Staff</span>
+            </a>
+          </div>
+          <div class="menu-item" if.bind="authenticated && (currentRoute !=='dashboard-router'|| widescreen)">
             <a href="/dashboard" class="nav-link" click.delegate="close()">
               <span class="fa fa-tachometer"></span>
-              <span class="nav-item">Admin</span>
+              <span class="nav-item">Admin Dashboard</span>
+            </a>
+          </div>
+          <div class="menu-item" if.bind="currentRoute !=='home' && currentRoute !==''">
+            <a href="/" class="nav-link" click.delegate="close()">
+              <span class="fa fa fa-eye" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Home</span>
             </a>
           </div>
           <div class="menu-item" if.bind="!authenticated && currentRoute ==='staff'" style="text-align:center;margin:center">
