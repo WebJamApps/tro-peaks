@@ -1,39 +1,213 @@
 <template>
   <div class="page-content">
     <a id="top"></a>
-    <div>
-      <div class="container-fluid">
-        <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
-          <h3 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:80px">Mountain Climbs</h3>
-          <h3 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px">Mountain Climbs</h3>
-          <p> At Tro-Peaks Adventures we have dedicated office staff, safari and climbing teams and the best quality equipment, which we maintain
-            to the highest standard. We are here to make your trip just as you had always dreamt it would be. we will work with you on an individual
-            basis to modify the itineraries listed here to suit your needs. The basic procedure is as follows:</p>
-          <ul>
-            <li>After we receive your price quote request, we will discuss your individual needs and perhaps make some suggestions for your itinerary. </li>
-            <li>Once we have the details in place we will send you a price quote.</li>
-            <li>You can choose which of the options you like best or perhaps discuss
-              with us how to further modify your trip.</li>
-            <li> Upon agreeing on the itinerary and the price we confirm availabilty of accommodations and then
-              will send you a confirmation along with your payment options.</li>
-          </ul>
-          <div style="margin:auto;text-align:left;max-width:4.5in">
-            <p>To send your details & request a quotation, contact us at:</p>
-            <p style="text-align:left"><strong><i>Tro-Peaks Adventures Ltd.</i></strong><br>
-              Email: <a href="mailto:tropeaksadventures@gmail.com" target="_blank">tropeaksadventures@gmail.com</a><br>
-              Cell: +255 763 830820 / +255 756 728700</p><br>
-          </div>
-          <h4>Cancellations / Trip Postponements</h4>
-          <p>If a date postponement or cancellation is required, 100% of your deposit will go towards the new date or be refunded
-            (less bank wire transfer fees). The exception being in cases of last minute postponements where there is insufficient notice for lodges
-            to refund your deposit.</p><br>
-          <p>Looking to join an existing group? <a href="/calendar">Group Climb Dates</a></p>
+    <div if.bind="widescreenPage" class="mountain-nav" style="position:fixed;top:150px;background-color:#e6eefe; height:52px; margin-left:0">
+      <p style="padding:20px;padding-top:20px;padding-bottom:0"><a style="background-color:#760908;color:white;text-decoration:none">Kilimanjaro</a> | <a>Mt Meru</a> | <a>Ol Doinyo Lengai</a></p>
+    </div>
+    <div class="container-fluid">
+      <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
+        <div if.bind="!widescreenPage" class="mountain-nav" style="position:fixed; top:13px; background-color:white;height:20px">
+          <p style="font-size:11pt"><a class="mn" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none">Kilimanjaro</a> |
+            <a style="font-size:10pt">Mt Meru</a> | <a style="font-size:10pt">Ol Doinyo Lengai</a>&nbsp;&nbsp;</p>
         </div>
-        <div>
+        <div if.bind="!widescreenPage" class="mountain-nav" style="background-color:white;height:20px">
+          <p style="font-size:11pt"><a class="mn" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none">Kilimanjaro</a> |
+            <a style="font-size:10pt">Mt Meru</a> | <a style="font-size:10pt">Ol Doinyo Lengai</a></p>
+        </div>
+        <h3 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:120px; text-align: center">Mountain Climbs</h3>
+        <h3 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align: center">Mountain Climbs</h3>
+        <div class="killa-section">
+          <h4><strong>Mount Kilimanjaro</strong></h4>
+          <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/yt8do3dowpdylbg/kilimanjaro-small.jpg?dl=0" alt="killamanjaro-small">
+          <div if.bind="!widescreenPage" style="margin:auto;text-align:center">
+            <img style="margin-left:-10px;max-width:289px" src="https://dl.dropboxusercontent.com/s/yt8do3dowpdylbg/kilimanjaro-small.jpg?dl=0" alt="killamanjaro-small">
+            <p>&nbsp;</p>
+          </div>
+          <p>
+            &ldquo;As wide as all the world, great, high and unbelievably white in the sun was the square top of Mount
+            Kilimanjaro,&rdquo; wrote Ernest Hemingway of the highest mountain in Africa, which rises to 5,895 meters above sea level.
+            Situated near the town of Moshi in northern Tanzania, Mount Kilimanjaro rises from the dry plains, through a wide belt of
+            forest and high alpine heath to an almost bare desert and finally the snow capped summit, Uhuru Peak, just 3 degrees
+            south of the equator.
+          </p>
+          <p>One of the world&#39;s highest free standing mountains, Mt. Kilimanjaro is comprised of three extinct volcanoes: Kibo
+            5895 m (19340 ft.), Mawenzi 5149 m (16896 ft.), and Shira 3962 m (13000 ft.).
+          </p>
+          <p> The name itself is shrouded in mystery. It might mean Mountain of Light, Mountain of Greatness or Mountain of Caravans.
+            The local people, the Wachagga tribe, call the whole massif- &quot;Kilemakyaro&quot; meaning &quot;Our Mountain&quot; with
+            its highest point only Kipoo (now known as Kilimanjaro and its highest point Kibo or Uhuru Peak) for the familiar snowy peak
+            that stands imperious, as overseer of the continent and the summit of Africa.
+          </p>
+          <p>Kilimanjaro is one of the world&#39;s most accessible high summits, a beacon for visitors from around the world. Most
+            climbers reach the crater rim with little more than a walking stick, proper clothing and determination. And those who reach
+            Uhuru Point, the actual summit, or Gillman&#39;s Point on the lip of the crater, will have earned their climbing certificates
+            and the accompanying memories.
+          </p>
+          <p>There are route options for the mountain. The biggest difference between the routes is that on Marangu Route, overnights are spent in
+            dormatory style huts which are equipped with solar power. All other routes are camping routes. Marangu Route is also the only route where the descent follows the same path as the climb. Rongai route also descends using this route, making
+            the traffic on this route much heavier than other routes. A climb can be done in as few as 5 days (Marangu Route) but the chance of success is not very high. The biggest obstacle during the climb is the lower oxygen content at higher
+            altitudes. In fact, at the summit, the oxygen content is only half of that at sea-level. By spending more days during the climb, your body has a greater opportunity to adjust. After reading the information about the routes, if you have
+            further questions, we are happy to help you.
+          </p>
+          <div if.bind="!widescreenPage">
+            <h4>Kilimanjaro Routes</h4>
+            <p>The following routes are available for booking:</p>
+            <ul>
+              <li>Machame Route 6 Days or 7 Days</li>
+              <li>Lemosho Route 7 Days or 8 Days</li>
+              <li>Rongai Route 6 Days or 7 Days</li>
+              <li>Shira Route 7 Days</li>
+              <li>Marangu Route 5 Days or 6 Days</li>
+              <li>Umbwe Route 6 Days</li>
+              <li>Two Peaks - 10 Days</li>
+            </ul>
+            <div>
+              <div id="musicSlide1" style="margin:auto; text-align:center">
+                <img style="max-width:700px" alt="kilimanjaro-map" src="https://dl.dropboxusercontent.com/s/eravhko9kd1fb5m/kilimanjaro-routes.jpg?dl=0">
+              </div>
+            </div>
+            <p style="margin:0;padding:0">&nbsp;</p>
+            <p>Click to download a <a>detailed itinerary</a>.</p>
+          </div>
+          <div if.bind="widescreenPage">
+            <table style="border:none">
+              <tr>
+                <td style="padding:10px;vertical-align: top;border:none;background-color:white;padding-top:0">
+                  <h4>Kilimanjaro Routes</h4>
+                  <p>The following routes are available for booking:</p>
+                  <ul>
+                    <li>Machame Route 6 Days or 7 Days</li>
+                    <li>Lemosho Route 7 Days or 8 Days</li>
+                    <li>Rongai Route 6 Days or 7 Days</li>
+                    <li>Shira Route 7 Days</li>
+                    <li>Marangu Route 5 Days or 6 Days</li>
+                    <li>Umbwe Route 6 Days</li>
+                    <li>Two Peaks - 10 Days</li>
+                  </ul>
+                  <p style="margin:0;padding:0">&nbsp;</p>
+                  <p>Click to download a <a>detailed itinerary</a>.</p>
+                </td>
+                <td style="padding:0;background-color:white;border:none">
+                  <div>
+                    <div id="musicSlide1" style="margin:auto; text-align:center">
+                      <img style="max-width:700px" alt="kilimanjaro-map" src="https://dl.dropboxusercontent.com/s/eravhko9kd1fb5m/kilimanjaro-routes.jpg?dl=0">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
           <p>&nbsp;</p>
+          <hr>
           <p>&nbsp;</p>
+        </div>
+        <div class="meru-section">
+          <h4><strong>Mount Meru</strong></h4>
+          <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/cubg5x84nmfbzxc/meru1.jpg?dl=0" alt="meru-small">
+          <div if.bind="!widescreenPage" style="margin:auto;text-align:center">
+            <img style="margin-left:-10px;max-width:289px" src="https://dl.dropboxusercontent.com/s/cubg5x84nmfbzxc/meru1.jpg?dl=0" alt="meru-small">
+            <p>&nbsp;</p>
+          </div>
+          <p>Mount Meru is one of Africa&#39;s highest and most beautiful volcanoes. The route to the summit passes through parkland, montane forest, a
+            giant heather zone and moorland. Finally, the summit is reached by a narrow,barren ridge which provides stunning views of the ash cone
+            several thousand feet below. There are also great views of the nearby Mt. Kilimanjaro. This climb is used by many as a acclimitization for a
+            Mt. Kilimanjaro climb but it is an excellent trek in its own right. It also requires fewer days to climb so those without enough time to climb
+            Mt. Kilimanjaro may consider this option. In addition, it is proportionally less expensive than a Mt. Kilimanjaro climb.
+          </p>
+          <p>The mountain in located inside of Arusha National Park. Here, over 400 species of birds, rhino, elephant, buffalo, baboon, warthog, black and
+            white Colobus monkey and duiker are all found in this delightful &ldquo;gem amonst parks.&rdquo; <br />
+            The group will be accompanied on Mount Meru by a Tro-Peaks Adventure guide, a manditory park ranger and porters. On the mountain we use dormitory
+            style huts. A sleeping bag and mat are required for the huts. The mountain has only one route to climb, the Momella route. This can be achieved in
+            either three or four days. We also have a special itinerary for climbing both Mt. Meru and Mt. Kilimanjaro in 10 days. To view this option, see
+            the Two Peaks itinerary in the Kilimanjaro routes.</p>
+          <hr>
+          <p>&nbsp;</p>
+        </div>
+        <div class="ol-doi-section">
+          <h4><strong>Ol Doinyo Lengai</strong></h4>
+          <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/45wezseunpj1e73/ol_doinyo_lengai.jpg?dl=0" alt="ol-d-small">
+          <div if.bind="!widescreenPage" style="margin:auto;text-align:center">
+            <img style="margin-left:-10px;max-width:289px" src="https://dl.dropboxusercontent.com/s/45wezseunpj1e73/ol_doinyo_lengai.jpg?dl=0" alt="ol-d-small">
+            <p>&nbsp;</p>
+          </div>
+          <p>
+            This acitve volcano is a holy spot for the Maasai. In fact its name literally means 'Mountain of god' in the Maasai langauge. Maasai from both Tanzania and Kenya who practice their traditional religion come here to offer sacrifice to
+            the god. The climb is void of shade and vegetation, making it a hot and dusty trek. The climbs start in the very early hours to avoid the scorching sun. The climb itself can be done in half a day, but it is most often combined with a
+            longer trek. The two most popular itinerary options are outlined below but of course we can make alterations to fit your desires.
+          </p>
+          <p>&nbsp;</p>
+          <hr>
+          <p>&nbsp;</p>
+        </div>
+        <div class="m-safety-section" style="margin-top:20px">
+          <h3>Mountain Safety</h3>
+          <p>At Tro-Peaks Adventure, the safety of our clients is our highest priority. We know our drivers, guides, cooks
+            and porters very well.&nbsp; They are always trusted and skilled people with whom we have worked in the past or who come highly
+            reccomended.&nbsp; Consequently, we know they will meet our high expectations for excellent service. Refer to what our clients have spoken
+            in our client comments page.</p>
+          <p>
+            You may also be certain that the equipment we use is of the highest quality to insure that our clients are not only quite safe but
+            that they meet the goals they have set for a successful climb or wildlife safari. You can find more information about our equipment
+            on our equipment page.</p>
+          <p>
+            We carefully evaluate any equipment that our clients may have brought with them to be certain their equipment meets our high
+            standards for safety and comfort. If additional equipment is required, we provide it. In the case of equipment which
+            needs to be rented, we go with you to local rental services to insure that the rental fees will be fair and reasonable. </p>
+          <p>Still, the unexpected does occasionally happen.
+            In the unlikely event that a medical emergency should arise, Tro-peaks Adventure staff members are fully trained in emergency
+            first aid and can quickly determine if additional medical assistance is required. A fully-stocked emergency medical
+            kit is with us at all times. And, we always maintain communication with emergency medical rescue services regardless of
+            where we and our at clients may be. </p>
+          <p>For more information about safety please contact us.</p>
+        </div>
+        <div class="equip-list" style="margin-top:20px">
+          <h3>Kilimanjaro/Meru Equipment List</h3>
+          <p>Clients should bring themselves the climbing gears as mentioned down below:
+          </p>
+          <ul class="w3-ul w3-small">
+            <li>One sleeping bag</li>
+            <li>One sleeping mat</li>
+            <li>One pair of climbing poles/sticks </li>
+            <li>One large duffle bag with straps / rucksack</li>
+            <li>One head lamp / flashlight + batteries </li>
+            <li>Water bottle &#45; 2 liters x 2 bottle or camel bag bottle</li>
+            <li>Binoculars and camera / sufficent memory/film</li>
+            <li>Purification water tablets / Water Pump</li>
+            <li>One pair sunglasses</li>
+            <li>One pair of climbing hiking boots</li>
+            <li>One pair of tennis shoes - to begin climb/side walks</li>
+            <li>Socks - thin and thick pairs</li>
+            <li>One warm trousers</li>
+            <li>Woolen trousers and jacket with zippers</li>
+            <li>Water proof / wind trousers &amp; jackets</li>
+            <li>Warm sweater for cold nights</li>
+            <li>Inner slacks &#45; long johns &amp; top</li>
+            <li>Long / short sleeve T-shirt with zippers</li>
+            <li>Pajamas and hand towel</li>
+            <li>Shade sun hat or cap</li>
+            <li>Balaclava</li>
+            <li>Gaiters</li>
+            <li>Mitten / Gloves - poly thermal</li>
+          </ul>
+          <p>Different types of tents which Tro-Peaks Adventures provides to our clients are as mentioned below:
+          </p>
+          <ul class="w3-ul w3-small">
+            <li>Mountain Hardware tents</li>
+            <li>North Face tents</li>
+            <li>Salewa tents</li>
+            <li>Vaude tents</li>
+          </ul>
+          <p>The above mentioned tent accommodates 1 person to 3 people and all of our tents are of 3 season dome-style mountain tents.
+            There are many stores where client can hire gear if it happen they need to do so.
+            In Moshi and Arusha there are many rental shops where you can go and hire anything that you need for your trip. Tro-Peaks Adventures
+            will help you to get your equipments from those stores in reasonable cost. If you do it yourself it will be very expensive.</p>
         </div>
       </div>
+      <div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
     </div>
+
   </div>
 </template>
