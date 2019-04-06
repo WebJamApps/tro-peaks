@@ -1,22 +1,41 @@
 <template>
   <div class="page-content">
     <a id="top"></a>
-    <div if.bind="widescreenPage" class="mountain-nav" style="position:fixed;top:150px;background-color:#e6eefe; height:52px; margin-left:0">
-      <p style="padding:20px;padding-top:20px;padding-bottom:0"><a style="background-color:#760908;color:white;text-decoration:none">Kilimanjaro</a> | <a>Mt Meru</a> | <a>Ol Doinyo Lengai</a></p>
+    <div if.bind="widescreenPage" class="mountain-nav" style="position:fixed;top:150px;background-color:#e6eefe; height:52px; margin-left:0;z-index:999">
+      <p style="padding:20px;padding-top:20px;padding-bottom:0">
+        <a click.delegate="showSection('killaSection')" style="background-color:#760908;color:white;text-decoration:none" class="kLink">Kilimanjaro
+        </a> | <a click.delegate="showSection('meruSection')" class="mLink">Mt Meru
+        </a> | <a click.delegate="showSection('oldSection')" class="oLink">
+          Ol Doinyo Lengai
+        </a>
+      </p>
     </div>
     <div class="container-fluid">
       <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
         <div if.bind="!widescreenPage" class="mountain-nav" style="position:fixed; top:13px; background-color:white;height:20px">
-          <p style="font-size:11pt"><a class="mn" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none">Kilimanjaro</a> |
-            <a style="font-size:10pt">Mt Meru</a> | <a style="font-size:10pt">Ol Doinyo Lengai</a>&nbsp;&nbsp;</p>
+          <p style="font-size:11pt">
+            <a class="kLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none" click.delegate="showSection('killaSection')">Kilimanjaro
+            </a> |
+            <a style="font-size:10pt" click.delegate="showSection('meruSection')" class="mLink">Mt Meru
+            </a> | <a style="font-size:10pt" click.delegate="showSection('oldSection')" class="oLink">Ol Doinyo Lengai
+            </a>&nbsp;&nbsp;
+          </p>
         </div>
         <div if.bind="!widescreenPage" class="mountain-nav" style="background-color:white;height:20px">
-          <p style="font-size:11pt"><a class="mn" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none">Kilimanjaro</a> |
-            <a style="font-size:10pt">Mt Meru</a> | <a style="font-size:10pt">Ol Doinyo Lengai</a></p>
+          <p style="font-size:11pt">
+            <a class="kLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none" click.delegate="showSection('killaSection')">
+              Kilimanjaro
+            </a> |
+            <a style="font-size:10pt" click.delegate="showSection('meruSection')" class="mLink">
+              Mt Meru
+            </a> | <a style="font-size:10pt" click.delegate="showSection('oldSection')" class="oLink">
+              Ol Doinyo Lengai
+            </a>
+          </p>
         </div>
         <h3 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:120px; text-align: center">Mountain Climbs</h3>
         <h3 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align: center">Mountain Climbs</h3>
-        <div class="killa-section">
+        <div class="killa-section" if.bind="killaSection">
           <h4><strong>Mount Kilimanjaro</strong></h4>
           <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/yt8do3dowpdylbg/kilimanjaro-small.jpg?dl=0" alt="killamanjaro-small">
           <div if.bind="!widescreenPage" style="margin:auto;text-align:center">
@@ -101,7 +120,7 @@
           <hr>
           <p>&nbsp;</p>
         </div>
-        <div class="meru-section">
+        <div class="meru-section" if.bind="meruSection">
           <h4><strong>Mount Meru</strong></h4>
           <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/cubg5x84nmfbzxc/meru1.jpg?dl=0" alt="meru-small">
           <div if.bind="!widescreenPage" style="margin:auto;text-align:center">
@@ -160,7 +179,7 @@
           <hr>
           <p>&nbsp;</p>
         </div>
-        <div class="ol-doi-section">
+        <div class="ol-doi-section" if.bind="oldSection">
           <h4><strong>Ol Doinyo Lengai</strong></h4>
           <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/45wezseunpj1e73/ol_doinyo_lengai.jpg?dl=0" alt="ol-d-small">
           <div if.bind="!widescreenPage" style="margin:auto;text-align:center">
@@ -224,7 +243,7 @@
             <p>For more information about safety please <a href="/booking">contact us</a>.</p>
           </div>
         </div>
-        <div class="equip-list" style="margin-top:50px">
+        <div class="equip-list" style="margin-top:50px" if.bind="equipSection">
           <div class="container-fluid">
             <h3>Kilimanjaro/Meru Equipment List</h3>
             <p>Clients should bring themselves the climbing gears as follows:
