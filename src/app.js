@@ -98,6 +98,12 @@ export class App {
         nav: false,
         title: 'Testimonials',
         settings: 'fa fa-users' },
+      { route: 'itineraries',
+        name: 'itineraries',
+        moduleId: PLATFORM.moduleName('./itineraries'),
+        nav: false,
+        title: 'Itineraries',
+        settings: 'fa fa-users' },
     ]);
   }
 
