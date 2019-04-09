@@ -1,39 +1,524 @@
 <template>
   <div class="page-content">
     <a id="top"></a>
-    <div>
-      <div class="container-fluid">
-        <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
-          <h3 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:80px">Safaris</h3>
-          <h3 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px">Safaris</h3>
-          <p> At Tro-Peaks Adventures we have dedicated office staff, safari and climbing teams and the best quality equipment, which we maintain
-            to the highest standard. We are here to make your trip just as you had always dreamt it would be. we will work with you on an individual
-            basis to modify the itineraries listed here to suit your needs. The basic procedure is as follows:</p>
-          <ul>
-            <li>After we receive your price quote request, we will discuss your individual needs and perhaps make some suggestions for your itinerary. </li>
-            <li>Once we have the details in place we will send you a price quote.</li>
-            <li>You can choose which of the options you like best or perhaps discuss
-              with us how to further modify your trip.</li>
-            <li> Upon agreeing on the itinerary and the price we confirm availabilty of accommodations and then
-              will send you a confirmation along with your payment options.</li>
-          </ul>
-          <div style="margin:auto;text-align:left;max-width:4.5in">
-            <p>To send your details & request a quotation, contact us at:</p>
-            <p style="text-align:left"><strong><i>Tro-Peaks Adventures Ltd.</i></strong><br>
-              Email: <a href="mailto:tropeaksadventures@gmail.com" target="_blank">tropeaksadventures@gmail.com</a><br>
-              Cell: +255 763 830820 / +255 756 728700</p><br>
-          </div>
-          <h4>Cancellations / Trip Postponements</h4>
-          <p>If a date postponement or cancellation is required, 100% of your deposit will go towards the new date or be refunded
-            (less bank wire transfer fees). The exception being in cases of last minute postponements where there is insufficient notice for lodges
-            to refund your deposit.</p><br>
-          <p>Looking to join an existing group? <a href="/calendar">Group Climb Dates</a></p>
+    <div if.bind="widescreenPage" class="mountain-nav" style="position:fixed;top:150px;background-color:#e6eefe; height:48px; margin-left:0;z-index:999">
+      <p style="padding:20px;padding-top:14px;padding-bottom:0">
+        <a click.delegate="showSection('killaSection')" style="background-color:#760908;color:white;text-decoration:none" class="kLink">North
+        </a> | <a click.delegate="showSection('meruSection')" class="mLink">South
+        </a> | <a click.delegate="showSection('oldSection')" class="oLink">
+          West
+        </a> | <a click.delegate="showSection('cultureSection')" class="cLink">
+          Culture
+        </a>
+      </p>
+    </div>
+    <div class="container-fluid">
+      <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
+        <div if.bind="!widescreenPage" class="mountain-nav" style="position:fixed; top:13px; background-color:white;height:20px">
+          <p style="font-size:11pt">
+            <a class="kLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none;padding-left:6px" click.delegate="showSection('killaSection')">North
+            </a> |
+            <a style="font-size:10pt" click.delegate="showSection('meruSection')" class="mLink">South
+            </a> | <a style="font-size:10pt" click.delegate="showSection('oldSection')" class="oLink">West
+            </a> | <a style="font-size:10pt" click.delegate="showSection('cultureSection')" class="cLink">
+              Culture
+            </a>&nbsp;&nbsp;
+          </p>
         </div>
-        <div>
+        <div if.bind="!widescreenPage" class="mountain-nav" style="background-color:white;height:20px">
+          <p style="font-size:11pt">
+            <a class="kLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none;padding-left:6px" click.delegate="showSection('killaSection')">
+              North
+            </a> |
+            <a style="font-size:10pt" click.delegate="showSection('meruSection')" class="mLink">
+              South
+            </a> | <a style="font-size:10pt" click.delegate="showSection('oldSection')" class="oLink">
+              West
+            </a> | <a style="font-size:10pt" click.delegate="showSection('cultureSection')" class="cLink">
+              Culture
+            </a>
+          </p>
+        </div>
+        <h2 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:120px; text-align: center">Safaries</h2>
+        <h2 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align: center">Safaries</h2>
+        <p>Tanzania is located in East Africa just south of the Equator. The plains of golden grass stretch toward the horizon until they meet a
+          cloudless azure sky. Bush country that defines the word green. Shimmering sands, rustling palms, and sparkling seas. Tanzania is so rich in
+          resources; it can be described as no less than immensely beautiful. Tanzania itself is a great destination for wildlife safari due to the
+          fact that it has set aside 40% of its land for the protection of its animals and vegetation.</p>
+        <p>The safari destinations in Tanzania are commonly broken up into different geographical circuits, By far the most popular of these it the Northern
+          Circuit. Its popularity is based on not only the fact that it includes the famed Serengeti and Ngorongoro Crater but also that Mt. Kilimanjaro
+          is nearby, making it possible to easily combine a mountain climb with a safari. It is also common for families and groups that those not
+          interested in climbing Mt. Kilimanjaro to go on a safari while the others are away scaling the mountain. The next most popular circuit is the
+          Southern Circuit where safaris depart from Tanzania&#39;s biggest city, Dar es Salaam. The Western Circuit is quite remote and getting there
+          by vehicle can be quite an adventure, especially during the rainy months of March - May and late November - December. Many people who choose
+          this circuit prefer to fly in by small plane. The major draw of this circuit, is the opportunity to observe chimpanzees in the wild at
+          Gombe Stream and Mahale National Parks.</p>
+        <p>Some destinations offer options for canoeing and walking safaris. In fact, a few locations only allow walking safaris (Gombe Stream and Udzungwa).
+          Walking safaris in most locations are with armed park rangers for protection. There are some options such as hot air balloon safari in the Serenegeti
+          with a sparking wine picnic breakfast served afterwards. Also, if time is short, there is the option of flying to the destinations by small plane.</p>
+        <p>Our vehicles are well maintained Toyota Land Cruisers and Land Rovers, all customized with safari viewing roof. We guarantee
+          window seats for all guests. Our guides all
+          speak English well (contact us if you require other languages) and are well experienced and studied regarding the flora and fauna.
+          There is a variety of overnight accommodation options from basic camping to five star lodges. If you choose basic camping,
+          we will bring a chef who will prepare your meals and can accommodate special diets. At tented camps and
+          lodges, the facility will have their own food preparation staff and will serve a variety of foods.</p>
+        <p>Many people like to incorporate a visit to one of Tanzania's 120 tribes. There are many interesting options that we will
+          describe below. There are a few wonderful culture tours that some communities have put together. With so many tribes, we can
+          only outline a few of the most requested here, but you can contact us for further choices.</p>
+        <p>&nbsp;</p>
+        <h3 style="text-align:center">Accommodations</h3>
+        <p>
+          There is a wide variety of overnight accommodations available eduring a safari. From basic camping to five star resorts costing $10,000/night, and thankfully, everything in between. With an everchanging list of options, it is best that we
+          describe the catagories for you to narrow down your choices and then we can suggest specifics while we work out your itinerary.
+        </p>
+        <h4><strong>Basic Camping</strong></h4>
+        <p>
+          There are really two types of basic camping that we use. One type is inside of the parks/conservation areas and the other is in nearby camps located outside of the destinations. Each has its own advantages.
+        </p>
+        <p>
+          Outside of the destinations, there are areas set aside for camping. Often in conjuntion with simple lodges. These are protected areas where there will not be any animals wandering (excepting perhaps some monkeys). The advantage is that the
+          facilities are generally nicer. Most often you can visit the lodge bar for refreshments and a snack, or take a swim in the swimming pool that many have on premises. The shower and toilet facilities are nicer. The other is inside of the
+          safari destinations, where animals are free to wander. They do not bother the tents (as long as you do not have food inside). There is a fenced in area where the food for the safari is protected and prepared. There is a slight risk if
+          going to the toilet alone at night, so it is best to take precautions. During the daytime, the animals usually will not make themselves known (although occasionally an elephant may be bold enough to wander into the camp). Do not expect
+          more than a drop toilet and cold water shower.
+        </p>
+        <p>
+          On a basic camping safari, we bring a chef to prepare your meals. Our staff will set up the tents. All you need to do is to relax and enjoy the beauty that surrounds you.
+        </p>
+        <h4><strong>Tented Camps</strong></h4>
+        <p>Yes, these are tents, but far from the type used in basic camping. These are full height, and fully furnished with beds and dressers. Most often they will be solar powered and self contained with flushing toilet and hot showers. Normally
+          there is a second roof over the tent, creating better insulation, reducing any noise from rain or any chance of leaks. These camps will have its own food preparation and will serve a variety of foods. There is a pretty big price range in
+          this catagory. Many times the camps are located near watering holes and other areas of good game viewing.
+        </p>
+        <p>
+          In this catagory are also mobile camps, mostly in the Serengeti. As you may guess from the name, these change locations based on the best game viewing during the particular time of the year.
+        </p>
+        <h4><strong>Lodges</strong></h4>
+        <p>
+          Here is also a wide variety of price and luxury. There may be in one large building, basically a hotel to small units spread out. Expect a bar and restaurant, swimming pool and other facilities. Some offer laundry service, internet, gift
+          shop, etc. Some of the nicer ones have excellent evening entertainment, usually cultural shows from the local tribes. Many of these are in prime locations.
+        </p>
+        <p>
+          We can work together as we assemble your itinerary with what options are the bet according to your budget, destination and time of the year that you are traveling.
+        </p>
+        <div class="north-section" if.bind="northSection">
+          <hr>
           <p>&nbsp;</p>
+          <h3 style="text-align:center">Northern Circuit</h3>
+          <h4><strong>Itineraries</strong></h4>
+          <p>Click to read examples of commonly requested <a href="/safari-itineraries">itineraries</a>. These can be used as a starting guide. We are happy to customize any itinerary according to your interests, time and budget allotments.
+          </p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Serengeti</strong></h4>
+          <p>
+            The Serengeti covers 14,763 sq km, is flourishing with magnificent wildlife. It lies between the shores of Lake Victoria in the west, Lake Eyasi in the South, and the Great Rift Valley to the east. As such, it offers the most complex
+            and
+            least disturbed ecosystem on earth.
+          </p>
+          <p>
+            The park features endless rolling plains and is contiguous with Masai Mara National Park in Kenya. Serengeti is known as one of the best wildlife sanctuary in the world and an estimated 3 million large animals roam the plains. On it
+            its
+            vast, treeless plains are tens of thousands of hoofed animals, constantly on the move in search of fresh grassland. One of the Serengeti’s main attractions is the annual migration of wildebeest herds in search for better grazing. Every
+            October and November, more than 1.5 millions of wildebeest and Zebras travel from the northern hills to the southern plains for the tropical rains, and then journey west and north after the long rains in April to June.
+          </p>
+          <p>
+            A unique combination of diverse habitats enables it to support more than 30 species of large herbivores and nearly 500 species of birds. Its landscape, originally formed by volcanic activity, has been sculptured by the concerted action
+            of wind, rain and sun. It now varies from open grass plains in the south, savannah with scattered acacia trees in the centre, hilly, wooded grassland in the north, to extensive woodland and black clay plains to the west. Small rivers,
+            lakes and swamps are scattered throughout. In the south-east rise the great volcanic massifs and craters of the Ngorongoro Highlands. Each area has its own particular atmosphere and wildlife. Kopjes which provide habitats to different
+            animals. The Serengeti boasts large herds of antelope including Patterson’s eland, zebra, gazelles, lion, leopard, cheetah, hyena, impala, and large herds of giraffes. Nearly 500 species of birds have been recorded in the park. The
+            Serengeti is an opportunity for one of the best game viewing in Africa.
+          </p>
+          <p>
+            December to March the wildebeest migration congregates around Ndutu, in the far south of the Serengeti. And April to May, the Wildebeest migration moves north into the plains of the central Serengeti. But between June and July the
+            wildebeest migration splits in two; one group goes west into the Western Corridor before crossing the Grumeti River, the other heads directly to the north of the Serengeti passing near Klein’s Camp. August to October the herd has
+            reformed, and meanders on the Kenya and Tanzania border , along the banks of the mighty Mara River, returning south from the beginning of November.
+            The unpredictable nature of the exact path and timing of wildebeest migration is due to the dependance on rain. The animals' moves follow the path of the rain in order to feed off the new grass whilst also being close to a good water
+            supply. Standing water may be found in different areas each year, may even be spread across different areas of the Serengeti. In the latter case, the herds may split and later regroup.
+          </p>
+          <p>Game drives, balloon safaris (upon request), walking safaris, cultural tourism (visit a Masai village), crocodile safaris are some of the most popular options for activities in the Serengeti.</p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Ngorongoro Conservation Area</strong></h4>
+          <p>
+            Ngorongoro Conservation Area (NCA) was established in 1959. It is located 156 kilometers west of Arusha. Ngorongoro and it coves an area of 8300sq/km. Ngorongoro Conservation Area (NCA) it boasts of the finest blend of mountain
+            landscapes shaped by rifts and volcanoes, wildlife, people and archaeological sites in Africa. The concept of multiple land use in a conservation perspective is a deviation from a traditional approach (National Parks & Game Reserves) of
+            regarding conservation as complete absenteeism of human Interference.
+          </p>
+          <p>
+            The NCA becomes one of the first program in the world to pioneering experiment in multiple land use for the benefits of both Maasai people and wildlife in a natural traditional setting. NCA is often called ‘African Eden’ and the ‘Eight
+            Wonder of the Natural World’. Traditional African pastoralists co-operate with Tanzania’s government bodies to help preserve the natural resources of the area and to ensure a fantastic experience for Tourists. Ngorongoro is the World
+            Heritage Site and has also been declared an International Biosphere Reserve by UNESCO, due to its outstanding wildlife and cultural value.
+          </p>
+          <p>
+            Ngorongoro is the largest unbroken caldera in the world. It is also known as collapsed volcano, this natural amphitheatre have 250 square kilometers and 23 km wide. The crater has very steep walls with an average depth of 600 meters at
+            the altitude of 2,286 m above sea level. The crater alone has over 20,000 large animals (half of them zebra & wildebeest). This includes some of Tanzania’s last remaining black rhino. Animals are free to leave or enter the crater but
+            most of them stay because of the abundance of water and food available in the crater floor throughout the year. One animal lacking inside the crater though is giraffe, who cannot negotiate the steep walls easily.
+          </p>
+          <p>Oldupai (Olduvai) Gorge is where Dr. Louis Leakey discovered the remains of Homo habilis or “handy man” regarded by evolutionists as mankind’s first step on the ladder of human evolution. Researchers say that humans have been part of
+            the Ngorongoro landscape for millions of years. The earliest sign of mankind in the conservation area is at LAETOLI, where hominid foot prints are preserved in volcanic rock dated 3,600,000 years old. The story continues at Olduvai
+            (Olduvai) Gorge, a river canyon cut 100 meters deep through the volcanic soils of the Serengeti plains. Buried in the layers are the remains of animals and hominids that lived and died around a shallow lake amid grass plains and
+            woodlands, from perhaps 2,000,000 years ago to the present. The four different kinds of hominids found there show a gradual increase in brain size and in the complexity of their stone tools. But many more fossils have been discovered
+            here including those of prehistoric elephants, giant horned sheep and enormous ostriches. Visitors can learn more details of this fascinating story by visiting the gorge where guides will give on site interpretation of the gorge. Oldupai
+            Museum at the gorge is also very useful for information and education.
+          </p>
+          <p>Ngorongoro Conservation Area (NCA) has a number of other stunning features. These are shifting sands, Nasera Rock, Olkarien Gorge, Empakai Crater, Olmoti Crater, Active Oldonyo Lengai volcano, Grassland, Lake Makat, Swamps, Lerai
+            Forest, Acacia Woodlands and Complex Forests.
+          </p>
+          <p>
+            Shifting Sands is North of Oldupai Gorge; a little black sand dune marches across the plains, moving 17 meters a year. Blown by a strong steady wind it somehow maintains its size and somehow maintains its size and elegant shape.
+          </p>
+          <p>
+            In the past few thousands of years, a succession of cattle herding people colonized this area from the north. The most numerous and recent are the Maasai who arrived about 200 years ago. Their strong insistence on their traditional
+            custom and costume interests many visitors. Today there is over 42,000 Maasai pastoralists living in the area with their cattle, goats and sheep visitors are welcome to learn about the culture of the Maasai and buy their handcrafts only
+            in designated bomas commonly known as “Cultural Bomas”.
+          </p>
+          <p>Activities in Ngorongoro Conservation Area and the crater include: game drive, walking safaris (highlands area only, no walking safaris are permitted inside of the crater) and trekking.
+          </p>
+          <p>Accomodations include: Lodges, campsites, guest houses in nearby Karatu town.
+            Ngorongoro Conservation Area can be also visited as a day trip, although this is stretching the limits a bit. If time does not permit a more relaxed option, this is a destination not to be missed and a day trip should be considered.
+          </p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Tarangire National Park</strong></h4>
+          <p>Located 120km from Arusha, Tarangire is the sixth largest park in Tanzania. This beautiful park stretches southeast of Lake Manyara around the Tarangire River. Just a few hours drive from the town of Arusha, Tarangire is a popular stop
+            for safaris traveling through the northern circuit on their way to Ngorongoro and the Serengeti. It is the vast number of baobabs trees that first capture the eye as you enter the park. The gently rolling countryside is dotted with these
+            majestic trees, which seem to dwarf the animals that feed beneath them.
+            The park owes its name to Tarangire River which flows across the area. Its banks are characterized by dense vegetation of acacia and mixed woodland. The surrounding area however, is dominated by huge baobab trees and to a lesser
+            prominence,old doum palm trees and black cotton grass. Tarangire also has regions of quite dense bush, but with high grasses and huge old baobab trees instead of the green forests of Manyara. The land is hilly and dominated by the
+            impressive valley of the Tarangire River, which attracts good numbers of migrant animals during the dry months, especially between July and September.
+          </p>
+          <p>
+            The unique aspect of this Park is the annual animal immigration that takes place during the dry season. Tarangire National Park has some of the highest population density of elephants anywhere in Tanzania, and its sparse vegetation,
+            makes it a beautiful and special location. The park extends into two game controlled areas and the animals are allowed to move freely throughout. From the dryness of July, large herds of zebra, wildebeest, hartebeest and in particular,
+            elephants can be found here in high densities until October when the short wet season allows them to move to new grasslands. Breathtaking views of the Masaai Steppe and the mountains to the south make a stop at Tarangire a memorable
+            experience.
+          </p>
+          <p>
+            Activities in Tarangire National Park include:
+            Game drives, bird watching, balloon safari and guided walking safaris.
+          </p>
+          <p>Accommodations include:
+            Lodge, luxury tented camps, special and public campsites. this park may be visited as a day trip from Moshi and below we have listed one of the most popular itineraries for Tarangire National Park.
+          </p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Lake Manyara National Park</strong></h4>
+          <p>
+            Lake Manyara was once a famous hunting ground, now it is one of Tanzania's most attractive sanctuaries. Nestling into the steep Rift Valley wall, this shallow alkaline lake is surrounded by ancient Baobab trees, ground water forest of
+            fig and mahogany and open grasslands. A wealth of surprisingly varied vegetation sustains a wealth of wildlife, nourished by chattering streams bubbling out of the escarpment base and waterfalls spilling over the cliff. Deep in the south
+            of the park, hot springs bubble to the surface in the shadow of the escarpment. Hippo wallows near the lake's borders of sedge. Two famous spectacles in Lake Manyara National Park are the tree-climbing lions, which spend most of the day
+            spread out along the branches of acacia trees six to seven meters above ground, and tree climbing pythons. Nestling at the base of the Great Rift Valley escarpment the park is noted for its incredible beauty. As visitors enter the gate
+            they pass into the lush forest, home to troops of baboons and blue monkeys. Further along, the forest opens up to the woodlands, grassland, swamps and beyond, the soda lake itself, covering 390 sq km and sanctuary to over 400 species of
+            bird including flamingo, pelican, storks, sacred ibis, cormorants and Egyptian geese. The park is particularly noted for its huge herds of buffalos and elephants. Also represented here are giraffe, impala, hippo and a great variety of
+            smaller animals.
+          </p>
+          <p>
+            Activities in Lake Manyara National Park include:
+            canoeing with forest walks on the escarpment, cultural tours, bike tours, game drive and abseiling outside the park.
+          </p>
+          <p>
+            Accommodations include:
+            lodge, campsites and hotels in Mto wa Mbu town or Karatu town. Also, this park is close enough to Moshi to be visited as a day trip.
+          </p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Arusha National Park</strong></h4>
+          <p>
+            The acrobatic black and white Colobus monkeys welcome you as you pass through Arusha's main entrance gate. From the lush green swamps surrounded by thick forest in the Ngurdoto Crater, up through the scenic beauty of the Momela Lakes,
+            each a startlingly different hue, through to the chilly alpine like tundra on Mount Meru, Arusha National Park is a gem of a park, althoug very accessable, it is suprisingly not heavily visited by tourists. Explore the diverse and
+            changing landscapes, hike along scenic mountain and forest trails and view huge masses of wildlife in this quaint and charming park.
+          </p>
+          <p>
+            There are three major attractions in the park. First is the Ngurdoto Crater, which is sometimes called "mini Ngorongoro". Secondly, there are the Momella lakes, which are shallow alkaline lakes which get their water from underground
+            streams. Finally, there is the spectacular Meru Crater. Mount Meru (14,990 feet) is described as "one of the most rewarding mountains to climb in Africa". Visitors can climb the mountain, or organize walking safaris. The park also
+            provides great views of Mt. Kilimanjaro and Mt. Meru on clear days. The remains of a large volcano, the Ngurdoto Crater is a steep sided bowl of lush swamps and riverine forest, which is home to elephant, buffalo, warthog, baboon,
+            reedbuck, Colobus monkeys and duikers. Mosses, ferns, lichens and orchids thrive in the damp atmosphere of the crater, giving way to huge mahogany, olive and date palm trees on the drier crater walls. The tranquil beauty of the Momela
+            Lakes brings to the park a wide variety of birdlife (over 380 species) including flamingoes, waterfowl, African pochard, ibis, heron, egrets, colorful turacos and trogons. The rocky crags of Mount Meru sees a large number of birds of
+            prey and you may be lucky enough to spot lammergeyers, a large, rare bird of prey, floating on the up draughts from the crater. Other game includes hippo, giraffe, zebra, antelope, blue monkey, dik dik, reedbuck, klipspringers, leopard,
+            and spotted hyena.
+          </p>
+          <p>Main attractions include: Ngurdoto Crater (Little Ngorongoro), Momella Lakes, Black and White Colobus Monkey, and Mount Meru (14,990 feet) and the Meru Crater
+          </p>
+          <p>
+            Activities in Arusha National Park include:
+            game drives, walking safaris with an armed ranger (required for walking safaris), bird watching along the 7 Momella soda lakes, cultural tourism outside the park gate (visit a Massai and Meru tribes village), Ngurdoto Crater
+          </p>
+          <p>
+            Accommodations include:
+            lodge, campsites and hotels in Arusha town. Also, this park is close enough to Moshi to be visited easily as a day trip.
+          </p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Mkomazi National Park</strong></h4>
+          <p>Mkomazi National Park (newly promoted to national park status) is in northern Tanzania in the districts of Same (pronounced "SAH-meh") in Kilimanjaro Region and Lushoto in Tanga Regions and incorporates the former Umba Forest Reserve.
+            The park borders Tsavo West National Park of Kenya and the South Pare, North Pare and West Usambara mountain ranges in Tanzania. It covers an area of approximately 3,230 sq. km, of which 2,010 sq. km is from the former game reserve and
+            the rest from the former forest reserve. As Mkomazi shares a border with the vast Tsavo National Park, it is part of greater eco-system making common ground for migratory herds of elephant, oryx and zebra during the wet season. the
+            endangered black rhino and wild dog have found refuge in the national park along with the adjacent Umba reserve in order to better protect these and other species. Within the park, the Mkomazi Rhino Sanctuary has attained international
+            renown for rehabilitating rhino, and it offers limitless viewing and educational opportunities for travellers. Herds of the tall slender-necked Gerenuks, with their bizarre alien-like heads, survive in Mkomazi's arid lands where other
+            antelope cannot; the Gerenuk even stand on their hind legs to stretch for the tiny leaves of thorny bushes and trees.
+          </p>
+          <p>
+            The river and other water holes keep the park teeming with small and large mammals, including silver backed jackal,
+            lion, cheetah, leopard, lesser kudu, giraffe, buffalo, elephant and zebra. Bird watchers also delight in trying to spot any number of Mkomazi's 450 avian species, from wood hoopoe to tawny eagle, parrot to kingfisher.
+            As a national park, Mkomazi has the potential to be a glorious sanctuary where travellers will explore more of Tanzania's hidden natural treasures.
+          </p>
+          <p>
+            Facilities include one semi-permanent tented camp in Mkomazi, near the current park headquarters, called Babu’s camp. There are several designated campsites in the park. The nearby town of Same offers a range of motels and guesthouses.
+            There are also some lodges recently opened not far outside of the park gates. Also, this park is close enough to Moshi to be visited as a day trip.
+            We can put together an itinerary that includes this park for you. Please contact us.
+          </p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Lake Natron</strong></h4>
+          <p>
+            Lake Natron is a salt lake located in northern Tanzania close to the Kenyan border, in Africa’s Great Rift Valley. Not far from Ol Doinyo Lengai volcano. The lake is quite shallow, less than three meters (10 feet) deep, and varies in
+            width depending on its water level. The color of the lake is characteristic of those where very high evaporation rates occur. As water evaporates during the dry season, salinity levels increase to the point that salt-loving
+            micro-organisms begin to thrive. Salt-loving organisms include some cyan bacteria, tiny bacteria that grow in water and make their own food with photosynthesis similar to plants. The red pigment in the cyan bacteria produces the deep
+            reds of the open water of the lake, and orange colors of the shallow parts of the lake. Algae within the Lake’s soda produces a dynamic collage of patterns surface of whilst from air and do also support the high population of flamingo’s
+            which do breed in the area.
+          </p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Lake Eyasi</strong></h4>
+          <p>
+            Lake Eyasi is a very scenic soda lake found on the southern border of the Ngorongoro Conservation Area. This sparcely visited lake lies at the base of the Eyasi escarpment on the Western Rift Valley wall. The lake has shallow alkaline
+            water, quite salty, with plenty of algae. It is very important lake, supporting a high population of flamingos. Most times clients include a visit to this lake as part of a Hadzabe tribal tour.
+
+            Contact us to put together an itinerary that includes this location.
+          </p>
+
+        </div>
+        <div class="south-section" if.bind="southSection">
+          <hr>
           <p>&nbsp;</p>
+          <h3 style="text-align:center">Southern Circuit</h3>
+          <h4><strong>Selous Game Reserve</strong></h4>
+          <p> At 54.600 Km&sup2; the Selous is the
+            largest game reserve in Africa. To put it in perspective, the Selous is larger than Switzerland and half
+            the size of the U.S. state of Ohio. Until recently, the reserve was only accessible by plane or by train. However, with an improvement to the
+            road network, the area is now accessible to everyone. The concentrations of wildlife in the Selous are understandably huge. The Selous, named
+            after a German explorer and author, boasts Tanzania&#39;s largest population of elephants &ndash; currently about 10,000 animals &ndash; as well
+            as some of Africa&rsquo;s largest numbers of buffalo, hippos, Nile crocodile and wild dogs. Other species commonly seen are lion, bushbuck,
+            impala, giraffe, eland, baboon, zebra and greater kudu. The Selous also contains one of the few viable populations of black rhinos in the world,
+            with between 150 and 200 individual animals. The reserve also contains more than 350 different bird species and 2,000 different species of
+            plants. The landscape is shaped by the Rufiji River and its tributaries, lined by Barrassus Palms, and it is the heart of the park. The Rufiji
+            swells through the park down to the Indian Ocean forming a series of small lakes that serves as an important source of water for the multitude
+            of the plains game. It is only in the Selous Game Reserve that one can combine game drives, boat tours and walking safaris. The hinterland
+            around Lake Tagalala and Beho Beho is some of the most picturesque in the area.</p>
+
+          <p>Activities in Selous Game Reserve include:
+            game drives, walking safaris escorted by armed ranger, boat safaris in Rufiji River or on one of the lakes and also hunting safaris.</p>
+
+          <p>Accommodations include:
+            luxury tented camps, lodges and campsites</p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Ruaha National Park</strong></h4>
+          <p>Ruaha has recently incorporated the former Usanga Game Reserve creating what is now the largest National Park in Africa covering over 15,000
+            sq km. This new park itself is at the heart of a much larger ecosystem covering over 40,000 sq km. The highlights of a trip to Ruaha is watching
+            the huge elephant herds (the greatest concentration in Africa) gathered around the mighty Ruaha River; the lifeblood of the park.
+            Ruaha is a visually stunning park with an undulating plateau at about 900m above lea level with occasional rocky outcrops and mountains reaching
+            heights of 1900m. Running though the park are &ldquo;sand rivers&rdquo; which dry up completely in the dry season and act as roads for the game
+            to move from waterhole to waterhole. Ruaha National Park is a good place for observing lion, buffalo, elephant and painted dog (African Wild Dog).
+            In addition, Grants gazelle, ostrich and cheetah may be seen on the plains. For bird enthusiasts, the park offers over 465 species. The rainy
+            season from January to June is particularly spectacular as the normal abundant birdlife is enhanced by numerous migrant species. </p>
+          <p>Activities include:
+            game drive, walking safaris</p>
+          <p>Accommodations include:
+            lodge, luxury tented camps, self catering bandas and campsites.</p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Mikumi National Park</strong></h4>
+          <p> This relatively small (3230 sq km) National Park lies 300 km west of Dar-es-Salaam. It is nestled between the Uruguru mountains to the
+            East and the Rift Valley escarpments to the Southwest. Even though this is a small park, there is a common border with the Selous Game Reserve,
+            allowing movement of game. Therefore Mikumi benefits from a high density of animals, while still being
+            easily accessible. Mikumi National Park is composed primarily of the Mkata River flood plain, this is surrounded by gently rolling hills
+            covered in miombo woodland. Although less spectacular than some of the better known Tanzanian National Parks, Mikumi still offers a
+            good safari experience with typical flora and fauna of East Africa. There is a rich variety of bird species as well as large numbers of
+            giraffes, buffaloes and elephants. Close to the waterholes you will find lions, leopards and hippos. Also present are zebras,
+            wild dogs, pythons, hartebeest, wildebeest, impala, warthog, eland and other antelope. Several observation towers enable you to view
+            the park in its entirety. </p>
+
+          <p>Activities in Mikumi National Park include:
+            snake park visit outside the park, game drives</p>
+
+          <p>Accommodations include:
+            lodge, luxury tented camp, public campsites and guest houses in Mikumi town.</p>
+
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Saadani National Park</strong></h4>
+          <p>Palm trees sway in a cooling oceanic breeze. White sand and blue water sparkle alluringly beneath the
+            tropical sun. Traditional dhows sail slowly past, propelled by billowing white sails, while Swahili fishermen cast their nets
+            below a brilliant red sunrise. Saadani National park occupies an area of 1,100 sq km (430 sq miles) and is only park where
+            the beach meets the bush. Indeed, it is the only wildlife sanctuary in East Africa to boast an Indian Ocean beachfront, it
+            possesses all the attributes that make Tanzania&rsquo;s tropical coastline and islands so popular with European sun-worshippers
+            . Yet it is also the one place where those idle hours of sunbathing might be interrupted by an elephant strolling past, or a
+            lion coming to drink at the nearby waterhole!</p>
+
+          <p> Protected as a game reserve since the 1960s, in 2002 it was expanded to cover twice its former area. The reserve suffered
+            greatly from poaching prior to the late 1990s, but recent years have seen a marked turnaround, due to a concerted clampdown
+            on poachers, based on integrating adjacent villages into the conservation drive.
+            Today, a surprisingly wide range of grazers and primates is seen on game drives and walks, among them giraffe, buffalo,
+            warthog, common waterbuck, reedbuck, hartebeest, wildebeest, red duiker, greater kudu, eland, sable antelope, yellow baboon
+            and vervet monkey. Herds of up to 30 elephants are encountered with increasing frequency, and several lion prides are
+            resident, together with leopard, spotted hyena and black-backed jackal. Boat trips on the mangrove-lined Wami River come
+            with a high chance of sighting hippos, crocodiles and a selection of marine and riverine birds, including the mangrove
+            kingfisher and lesser flamingo, while the beaches form one of the last major green turtle breeding sites on mainland
+            Tanzania.</p>
+          <p>Accommodations include:
+            one luxury tented camp, campsites planned and lodges.</p>
+        </div>
+        <div class="west-section" if.bind="westSection">
+          <hr>
+          <p>&nbsp;</p>
+          <h3 style="text-align:center">Western Circuit</h3>
+          <h4><strong>Gombe Stream National Park</strong></h4>
+          <p> Gombe Stream is the smallest of Tanzania&rsquo;s National Parks situated 16 km north of Kigoma, in western Tanzania, Covering only 52 sq km
+            (20 sq miles), comprising a thin strip of ancient forest set among mountains and steep valleys on the shores of Lake Tanganyika.
+            Chimpanzees are the reason to visit Gombe Stream which is the world&#39;s most famous chimpanzee community. The pioneering British researcher
+            Jane Goodall, whose years of constant observation since 1960 have brought to light startling new facts about mankind&rsquo;s closest cousins.
+            Her research is still ongoing and has made this small, fragile parcel of land world renown. there are no roads in this park, guided walking safaris
+            are the only option. Strict measures are in place regarding viewing the chimpanzees for the sake of conservation of the animals. Although the
+            habitat is small here, thre is no guarentee of finding the chimpanzees in one day, so it is advisable to allow at least two days or even
+            three if possible.</p>
+
+          <p>
+            The chimps are as individually unique as humans and no scientific expertise is needed to distinguish the different characters in the cast.
+            The majority of the other park mammals are primates, most of them forest species. In addition to the famous chimpanzees, visitors could be
+
+            lucky enough to see blue or red- tail monkeys. Carnivores are rare in the forest, making Gombe the ideal place for a walking safari, or a swim
+            in one of the streams. The best time to find the chimpanzees at Gombe is during the wet season from February to June and November to December.
+            The dry months of July to October and December to January are, however, better for photo-opportunities. The following is a typical itinerary.</p>
+
+          <ul style="max-width:8in; margin:auto">
+            <p style="text-align:center;padding-bottom:0;margin-bottom:4px"><i>4 Days Chimpanzee Tracking Safari at Gombe National Park</i></p>
+            <li>
+              Day 1: Arrival day- Kigoma <br />
+              Fly to Kigoma. Dinner and overnight at hotel</li>
+
+            <li>Day 2: Gombe Stream N. P.<br />
+              Breakfast at the hotel and then depart to Gombe National Park by boat. Morning Chimpanzee tracking in the forest.
+              Lunch at the Gombe Rest house; Afternoon at leisure; dinner and overnight at the Gombe Rest house
+            </li>
+            <li>Day 3: Chimpanzee Tracking<br />
+              Breakfast at the campfollowed by chimpanzee tracking in the forest. Climb to the Kakombe waterfalls at the park.
+              Lunch at the Gombe Rest House. Dinner at the Gombe Rest House.
+            </li>
+            <li>Day 4: Gombe - Kigoma<br />
+              Breakfast in the park and then boat ride to Kigoma for your onward travel back to Moshi or Arusha.
+            </li>
+          </ul>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Mahale National Park</strong></h4>
+          <p> Mahale National Park covers an area of 1,613sqkm balong the shore of Lake Tanganyika.
+
+            Along with Gombe Stream,Mahale offers the opportunity to see chimpanzees in the wild. Tracking the chimps of Mahale is a magical experience. The
+            guide&#39;s eyes pick out last night&#39;s nests - shadowy clumps high in a gallery of trees crowding the sky. Scraps of half-eaten fruit and fresh
+            dung become valuable clues, leading deeper into the forest. Butterflies flit in the dappled sunlight. Then suddenly you are in their midst: preening
+            each other&#39;s glossy coats in concentrated huddles, squabbling noisily, or bounding into the trees to swing effortlessly between the vines.</p>
+
+          <p>Although the chimpanzees are the star attraction, the slopes support a diverse forest fauna, including readily observed troops of red
+            colobus, red-tailed and blue monkeys and a kaleidoscopic array of colourful forest birds. Similar the Gombe Stream, the government has strict
+            regulations in viewing the chimapanzees. Since the habitat is larger in Mahale compared with Gombe, tracking the chimpanzees may be tougher so
+            you will need to allow a few extra days.</p>
+          <p>The area is also known locally as Nkungwe, after the park&#39;s largest mountain, held sacred by the local Tongwe people. At 2,460 metres (8,069 ft)
+            Nkungwe is the highest of the six prominent points that make up the Mahale Range. The park is magnificent in beauty as the mountians come straight out
+            Lake Tanganika, offering steep banks of montane rainforest. Lake Tanganika is the longest lake in the world and second deepest. This unpolluted lake hosts over 1,000 species of fish, many of them
+            only found here. The local tribe is known as the Tongwe and this land is sacred to them, being the ome of their mountain spirits.</p>
+
+          <p>Activities in Mahale National Park include:
+            chimp tracking; hiking, camping safaris, lodge safaris,snorkelling, fish for your dinner.
+            Accommodations include:
+            three seasonal luxury tented camps, two small resthouses and a large campsite.
+            The following is a suggested itinerary</p>
+          <ul style="max-width:8in; margin:auto">
+            <p style="text-align:center;padding-bottom:0;margin-bottom:4px"><i>5 Days Chimpanzee Tracking Safari at Mahale National Park</i></p>
+            <li>
+
+              Day 1: Arrive in Kigoma<br />
+              Fly from Kilimanjaro or Arusha airports to Kigoma. Arrive Kigoma and pick up from the airport for transfer to Kigoma Hilltop
+              Hotel for Dinner and overnight.
+            </li>
+            <li>Day 2: Kigoma to Mahale National Park<br />
+              Breakfast at the hotel followed by departure to Mahale National Park by motorized boat; visit the Mahale Park Information
+              Center at park headquarters. Lunch at the camp and afternoon at leisure. Dinner and bonfire at Nkungwe luxury tented camp
+            </li>
+            <li>Day 3: Chimpanzee Tracking<br />
+              After breakfast in the camp depart for a chimpanzee tracking in the forest, returning to the camp for lunch. After lunch game
+              viewing by boat on the lake (birds, hippos etc). Dinner and bonfire at Nkungwe Luxury Tented Camp
+            </li>
+            <li>Day 4: Game viewing &amp; fishing<br />
+              After breakfast start with game viewing / chimpanzee tracking in the forest followed by lunch at the camp.
+              The afternoon will be spent fishing by boat on the lake (2 to 3 hours). Dinner and bonfire at Nkungwe Luxury Tented Camp
+            </li>
+            <li>Day 5: Return to Kigoma<br />
+              Early breakfast at the camp then depart for Kigoma by motorized boat. Lunch and transfer to the airport for the return
+              to Moshi or Arusha.
+            </li>
+          </ul>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong> Katavi National Park</strong></h4>
+          <p> This park is quite remote and difficult to reach (strictly recommended for those of an adventurous spirit). It lies on a high flood plain
+            surrounding Lake Katavi, to the south of the Mahale Mountains. The main vegetation found here is the Miombo woodland. It has a wide variety
+            of wildlife including crocodile, hippo, leopard, lion, roan and sable antelopes, southern reedbuck, topi, eland, elephant, and one of the largest
+            herds of buffalo. Katavi offers excellent game viewing with a feel of how safaris must have been like in times past. The diverse woodland,
+            acacia bush, lakes and swamps have attracted over 400 species of birds, including large flocks of pelicans. Other attractions are Lake Katavi
+            and Lake Chada, which are joined by the River Katuma.</p>
+
+          <p>Accommodations include:
+            designated camp sites within the park, hotels and lodges are at Mpanda, 40 km north.
+            Contact us to put together an itinerary that includes Katavi N.P.</p>
+        </div>
+        <div class="culture-section" if.bind="cultureSection">
+          <hr>
+          <p>&nbsp;</p>
+          <h3 style="text-align:center">Culture Tours</h3>
+          <p>Tanzania is a country of great cultural diversity. The country has remarkable unity given that it is comprised of 120 tribes, each
+            with its own language and culture. Unlike many countries, the government has managed to allow cultural diversity while establishing
+            a national identity. While in cities many of the traditional ways have been lost, one does not have to look far to find traditional
+            ways still kept by each tribe. During your safari, it is easy to take anywhere from one hour to a full day to explore some of the most
+            intersting tribes. Many people in fact have found this to be the highlight of their Tanzanian stay. The tribes are very friendly and
+            open to visitors. We do our best to present an authentic experience to give you an accurate glimpse into their lives.
+            Below are some options that are popular
+            near the northern safari circuit. You can contact us for more options or information.</p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Mto wa Mbu Village Tour</strong></h4>
+          <p> Situated adjacent to Lake Manyara National Park. In Mto wa Mbu (although the name literally means river of mosquitoes, it really is
+            not as bad as the name makes it), it is the only point in Africa where 4 language families meet; the Nilotes, Cushites, Bantu and Hamites;
+            a unique cultural feature in the world. A point in Tanzania where anthropology is most diverse. Visit a Maasai boma, dancing, market,
+            schools and community project will be offered. View rice farming and see how local beer is made. Maasai village visit to foster the true
+            experience of most complex cultural experience in Africa is a gift will be hard to forget in your entire life. Hike the Rift Valley wall
+            and view the Lake Manyara. This trip can be easily added onto any Tanzanian Northern Circuit safari.</p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong> Maasai Tribal Tour</strong></h4>
+          <p>Of the large number of tribes in East Africa, the Maasai tribe is easily the most popular for tourists. Known as fierce warriors, this nomadic tribe is
+            actually very friendly and open to visitors. Many of them still live a very traditional lifestyle and are easy to spot by their distictive clothing. On this tour, you can
+            expect to learn about the Maasai religous beliefs, culture and lifestyle. You will have the opportunity to enter into one of their traditional dwellings and
+            hear them sing and dance (and join in if you wish) and see their famous jumping abilities. This trip also offers the opportunity to buy Maasai crafts direct
+            from the tribe. This trip can be easily added into any northern Tanzanian safari or as a daytrip from Moshi.</p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Hadzabe Tribal Tour</strong></h4>
+          <p>The Hadzabe are one of the few true hunter-gatherer tribes left in the world. They live in simple temporary shelters and live by hunting by bow and arrow,
+            using poisoned arrowtips for large game. They hunt for anything from mice to giraffe, with baboon being their preferred game. If they are successful in killing
+            large game such as giraffe, often the tribe will simply relocate to the kill site rather than transport the game. They also for rage for roots and
+            berries and are experts at herbal medicine. They create fire by rubbing sticks together in an amazingly short time. Their clothing is also based on availability,
+            wearing animal skins, nothing or donated clothing. Attempts to bring the Hadzabe into a more modern existance and give education to the children by the government
+            has failed. They truly love their way of life but their hunting grounds are diminishing making their existance tougher. They reside near the shores of Lake Eyasi as do the Nilotic-speaking Datoga tribe. A tour will include the
+            opportunity to go along on a hunt, experience their singing and dancing. This is an amazing tour of a vanishing lifestyle. This tour can be added to any safari that
+            is near Ngorongoro Conservation Area.</p>
+          <p style="padding:0;margin:0">&nbsp;</p>
+          <h4><strong>Chagga Culture Tour</strong></h4>
+          <p>The Chagga tribe resides in the lower slopes of Mt. Kilimanjaro. Many of the people you will meet in Moshi are Chagga and have adapted their live to a modern
+            Tanzanian lifestyle but in rural areas, their traditions still exist. There are numerous options for viewing traditional Chagga life including visiting coffee
+            and banana plantations. Two other popular options are outlined below.
+            <p>KIBOSHO / MWEKA<br>
+              Situated at the southern part of Mt Kilimanjaro this area is historic in the battles of the Chagga and Maasai.
+              About a century and half ago there used to be a frequent raids and looting of Chagga property by the Maasai and fighting among factions of the Chagga
+              themselves in the course of territory expansion. After suffering many hardships, idea was adopted by the Chagga was to utilize the hidden
+              underground called &ldquo;Chagga bolt hole&rdquo;. Where by Chagga bolt hole a special hole which was dug and partitioned into different chambers for
+              the purpose of hidding women and children as well as storing food and livestock. In addition to the excellent hiding spot, this area served as a vantage
+              point to see how the flow of battles were progressing.</p>
+            <p>MARANGU / MAMBA<br>
+              Mountain climbing enthusiasts will be advised to visit the home and memorial of the late Yohano Lauwo, a Marangu native who accompanied Dr. Hans Meyer on the
+              peak of Mt. Kilimanjaro in 1889 (the first European to climb Mt. Kilimanjaro). You can also learn about the Chagga culture by visiting a traditional Chagga house
+              with straw roof. You can visit the Chief Mangi area where the first court and primary school built in the Northern Region of Tanzania are still functioning. You
+              will be able to pass historical sites of clan wars where the Chagga used large caves to hide themselves when the fought with Maasai. </p>
+            <p>This tour is an easy day trip from Moshi or Arusha. Contact us to incorporate this into your itinerary.</p>
         </div>
       </div>
+      <div>
+        <p>&nbsp;</p>
+      </div>
     </div>
-  </div>
 </template>

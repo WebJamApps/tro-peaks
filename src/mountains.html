@@ -1,8 +1,8 @@
 <template>
   <div class="page-content">
     <a id="top"></a>
-    <div if.bind="widescreenPage" class="mountain-nav" style="position:fixed;top:150px;background-color:#e6eefe; height:52px; margin-left:0;z-index:999">
-      <p style="padding:20px;padding-top:20px;padding-bottom:0">
+    <div if.bind="widescreenPage" class="mountain-nav" style="position:fixed;top:150px;background-color:#e6eefe; height:48px; margin-left:0;z-index:999">
+      <p style="padding:20px;padding-top:14px;padding-bottom:0">
         <a click.delegate="showSection('killaSection')" style="background-color:#760908;color:white;text-decoration:none" class="kLink">Kilimanjaro
         </a> | <a click.delegate="showSection('meruSection')" class="mLink">Meru
         </a> | <a click.delegate="showSection('oldSection')" class="oLink">
@@ -14,7 +14,7 @@
       <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
         <div if.bind="!widescreenPage" class="mountain-nav" style="position:fixed; top:13px; background-color:white;height:20px">
           <p style="font-size:11pt">
-            <a class="kLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none" click.delegate="showSection('killaSection')">Kilimanjaro
+            <a class="kLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none;padding-left:6px" click.delegate="showSection('killaSection')">Kilimanjaro
             </a> |
             <a style="font-size:10pt" click.delegate="showSection('meruSection')" class="mLink">Meru
             </a> | <a style="font-size:10pt" click.delegate="showSection('oldSection')" class="oLink">Ol Doinyo Lengai
@@ -23,7 +23,7 @@
         </div>
         <div if.bind="!widescreenPage" class="mountain-nav" style="background-color:white;height:20px">
           <p style="font-size:11pt">
-            <a class="kLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none" click.delegate="showSection('killaSection')">
+            <a class="kLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none;padding-left:6px" click.delegate="showSection('killaSection')">
               Kilimanjaro
             </a> |
             <a style="font-size:10pt" click.delegate="showSection('meruSection')" class="mLink">
@@ -33,10 +33,10 @@
             </a>
           </p>
         </div>
-        <h3 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:120px; text-align: center">Mountain Climbs</h3>
-        <h3 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align: center">Mountain Climbs</h3>
+        <h2 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:120px; text-align: center">Mountain Climbs</h2>
+        <h2 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align: center">Mountain Climbs</h2>
         <div class="killa-section" if.bind="killaSection">
-          <h4><strong>Mount Kilimanjaro</strong></h4>
+          <h3>Mount Kilimanjaro</h3>
           <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/yt8do3dowpdylbg/kilimanjaro-small.jpg?dl=0" alt="killamanjaro-small">
           <div if.bind="!widescreenPage" style="margin:auto;text-align:center">
             <img style="margin-left:-10px;max-width:289px" src="https://dl.dropboxusercontent.com/s/yt8do3dowpdylbg/kilimanjaro-small.jpg?dl=0" alt="killamanjaro-small">
@@ -121,7 +121,7 @@
           <p>&nbsp;</p>
         </div>
         <div class="meru-section" if.bind="meruSection">
-          <h4><strong>Mount Meru</strong></h4>
+          <h3>Mount Meru</h3>
           <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/cubg5x84nmfbzxc/meru1.jpg?dl=0" alt="meru-small">
           <div if.bind="!widescreenPage" style="margin:auto;text-align:center">
             <img style="margin-left:-10px;max-width:289px" src="https://dl.dropboxusercontent.com/s/cubg5x84nmfbzxc/meru1.jpg?dl=0" alt="meru-small">
@@ -150,7 +150,7 @@
               <img style="max-width:700px" alt="meru-route-map" src="https://dl.dropboxusercontent.com/s/l28ijcbst34s102/MeruClimbMap.jpg?dl=0">
             </div>
             <p style="margin:0;padding:0">&nbsp;</p>
-            <p>View a detailed <a href="/itineraries">itinerary</a>.</p>
+            <p>View a detailed <a href="/mountain-itineraries">itinerary</a>.</p>
           </div>
           <div if.bind="widescreenPage">
             <table style="border:none">
@@ -164,7 +164,7 @@
                     <li>Two Peaks (Meru & Kilimanjaro) - 10 Days</li>
                   </ul>
                   <p style="margin:0;padding:0">&nbsp;</p>
-                  <p>View a detailed <a href="/itineraries">itinerary</a>.</p>
+                  <p>View a detailed <a href="/mountain-itineraries">itinerary</a>.</p>
                 </td>
                 <td style="padding:0;background-color:white;border:none">
                   <div>
@@ -180,7 +180,7 @@
           <p>&nbsp;</p>
         </div>
         <div class="ol-doi-section" if.bind="oldSection">
-          <h4><strong>Ol Doinyo Lengai</strong></h4>
+          <h3>Ol Doinyo Lengai</h3>
           <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/45wezseunpj1e73/ol_doinyo_lengai.jpg?dl=0" alt="ol-d-small">
           <div if.bind="!widescreenPage" style="margin:auto;text-align:center">
             <img style="margin-left:-10px;max-width:289px" src="https://dl.dropboxusercontent.com/s/45wezseunpj1e73/ol_doinyo_lengai.jpg?dl=0" alt="ol-d-small">
@@ -201,7 +201,7 @@
                 Ngorongoro - Ol Doinyo Lengai 7 Days
               </li>
               <p style="margin:0;padding:0">&nbsp;</p>
-              <p>View a detailed <a href="/itineraries">itinerary</a>.</p>
+              <p>View a detailed <a href="/mountain-itineraries">itinerary</a>.</p>
             </ul>
           </div>
           <p>&nbsp;</p>
@@ -230,7 +230,6 @@
                 </div>
               </div>
             </div>
-            <!-- <p>&nbsp;</p> -->
             <p>
               We carefully evaluate any equipment that our clients may have brought with them to be certain their equipment meets our high
               standards for safety and comfort. If additional equipment is required, we provide it. In the case of equipment which
@@ -316,6 +315,5 @@
         <p>&nbsp;</p>
       </div>
     </div>
-
   </div>
 </template>
