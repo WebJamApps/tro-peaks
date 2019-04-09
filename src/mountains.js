@@ -65,14 +65,15 @@ export class Mountains {
     }
   }
   resetLinks(nameArr) {
-    let elClass;
+    let elClass, bgColor = 'white';
+    if (this.widescreenPage) bgColor = '#e6eefe';
     for (let i = 0; i < nameArr.length; i += 1) {
       elClass = document.getElementsByClassName(nameArr[i]);
-      elClass[0].style.backgroundColor = 'white';
+      elClass[0].style.backgroundColor = bgColor;
       elClass[0].style.color = '#007bff';
       elClass[0].style.textDecoration = 'underline';
       if (!this.widescreenPage) {
-        elClass[1].style.backgroundColor = 'white';
+        elClass[1].style.backgroundColor = bgColor;
         elClass[1].style.color = '#007bff';
         elClass[1].style.textDecoration = 'underline';
       }
