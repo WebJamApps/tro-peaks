@@ -30,9 +30,6 @@ export class Mountains {
         oLink[1].style.color = 'white';
         oLink[1].style.textDecoration = 'none';
       }
-      // oLink[2].style.backgroundColor = '#760908';
-      // oLink[2].style.color = 'white';
-      // oLink[2].style.textDecoration = 'none';
       this.meruSection = false;
       this.killaSection = false;
       this.equipSection = false;
@@ -49,6 +46,7 @@ export class Mountains {
       }
       this.meruSection = false;
       this.equipSection = true;
+      this.oldSection = false;
       this.resetLinks(['oLink', 'mLink']);
     }
     if (name === 'meruSection') {
@@ -62,6 +60,7 @@ export class Mountains {
       }
       this.killaSection = false;
       this.equipSection = true;
+      this.oldSection = false;
       this.resetLinks(['kLink', 'oLink']);
     }
   }

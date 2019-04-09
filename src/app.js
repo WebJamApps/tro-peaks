@@ -98,6 +98,18 @@ export class App {
         nav: false,
         title: 'Testimonials',
         settings: 'fa fa-users' },
+      { route: 'mountain-itineraries',
+        name: 'mountain-itineraries',
+        moduleId: PLATFORM.moduleName('./mountain-itineraries'),
+        nav: false,
+        title: 'Mountain Itineraries',
+        settings: 'fa fa-users' },
+      { route: 'safari-itineraries',
+        name: 'safari-itineraries',
+        moduleId: PLATFORM.moduleName('./safari-itineraries'),
+        nav: false,
+        title: 'Safari Itineraries',
+        settings: 'fa fa-users' },
     ]);
   }
 
