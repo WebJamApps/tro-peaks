@@ -6,7 +6,7 @@ import {
 } from './app';
 
 @inject(App)
-export class Itineraries {
+export class MountainItineraries {
   constructor(app) { this.app = app; }
   get widescreenPage() { return document.documentElement.clientWidth > 900; }
   attached() { document.getElementById('top').scrollIntoView(); }
