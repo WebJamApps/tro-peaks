@@ -17,51 +17,66 @@ export class Safaris {
   get widescreenPage() { return document.documentElement.clientWidth > 900; }
   attached() { document.getElementById('top').scrollIntoView(); }
   showSection(name) {
-    const mLink = document.getElementsByClassName('mLink');
-    const kLink = document.getElementsByClassName('kLink');
-    const oLink = document.getElementsByClassName('oLink');
+    const nLink = document.getElementsByClassName('nLink');
+    const sLink = document.getElementsByClassName('sLink');
+    const wLink = document.getElementsByClassName('wLink');
+    const cLink = document.getElementsByClassName('cLink');
     this[name] = true;
-    if (name === 'oldSection') {
-      oLink[0].style.backgroundColor = '#760908';
-      oLink[0].style.color = 'white';
-      oLink[0].style.textDecoration = 'none';
+    if (name === 'northSection') {
+      nLink[0].style.backgroundColor = '#760908';
+      nLink[0].style.color = 'white';
+      nLink[0].style.textDecoration = 'none';
       if (!this.widescreenPage) {
-        oLink[1].style.backgroundColor = '#760908';
-        oLink[1].style.color = 'white';
-        oLink[1].style.textDecoration = 'none';
+        nLink[1].style.backgroundColor = '#760908';
+        nLink[1].style.color = 'white';
+        nLink[1].style.textDecoration = 'none';
       }
-      this.meruSection = false;
-      this.killaSection = false;
-      this.equipSection = false;
-      this.resetLinks(['kLink', 'mLink']);
+      this.southSection = false;
+      this.westSection = false;
+      this.cultureSection = false;
+      this.resetLinks(['sLink', 'wLink', 'cLink']);
     }
-    if (name === 'killaSection') {
-      kLink[0].style.backgroundColor = '#760908';
-      kLink[0].style.color = 'white';
-      kLink[0].style.textDecoration = 'none';
+    if (name === 'southSection') {
+      sLink[0].style.backgroundColor = '#760908';
+      sLink[0].style.color = 'white';
+      sLink[0].style.textDecoration = 'none';
       if (!this.widescreenPage) {
-        kLink[1].style.backgroundColor = '#760908';
-        kLink[1].style.color = 'white';
-        kLink[1].style.textDecoration = 'none';
+        sLink[1].style.backgroundColor = '#760908';
+        sLink[1].style.color = 'white';
+        sLink[1].style.textDecoration = 'none';
       }
-      this.meruSection = false;
-      this.equipSection = true;
-      this.oldSection = false;
-      this.resetLinks(['oLink', 'mLink']);
+      this.northSection = false;
+      this.westSection = false;
+      this.cultureSection = false;
+      this.resetLinks(['nLink', 'wLink', 'cLink']);
     }
-    if (name === 'meruSection') {
-      mLink[0].style.backgroundColor = '#760908';
-      mLink[0].style.color = 'white';
-      mLink[0].style.textDecoration = 'none';
+    if (name === 'westSection') {
+      wLink[0].style.backgroundColor = '#760908';
+      wLink[0].style.color = 'white';
+      wLink[0].style.textDecoration = 'none';
       if (!this.widescreenPage) {
-        mLink[1].style.backgroundColor = '#760908';
-        mLink[1].style.color = 'white';
-        mLink[1].style.textDecoration = 'none';
+        wLink[1].style.backgroundColor = '#760908';
+        wLink[1].style.color = 'white';
+        wLink[1].style.textDecoration = 'none';
       }
-      this.killaSection = false;
-      this.equipSection = true;
-      this.oldSection = false;
-      this.resetLinks(['kLink', 'oLink']);
+      this.northSection = false;
+      this.southSection = false;
+      this.cultureSection = false;
+      this.resetLinks(['nLink', 'sLink', 'cLink']);
+    }
+    if (name === 'cultureSection') {
+      cLink[0].style.backgroundColor = '#760908';
+      cLink[0].style.color = 'white';
+      cLink[0].style.textDecoration = 'none';
+      if (!this.widescreenPage) {
+        cLink[1].style.backgroundColor = '#760908';
+        cLink[1].style.color = 'white';
+        cLink[1].style.textDecoration = 'none';
+      }
+      this.northSection = false;
+      this.southSection = false;
+      this.westSection = false;
+      this.resetLinks(['nLink', 'sLink', 'wLink']);
     }
   }
   resetLinks(nameArr) {

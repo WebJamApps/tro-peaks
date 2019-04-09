@@ -3,9 +3,9 @@
     <a id="top"></a>
     <div if.bind="widescreenPage" class="mountain-nav" style="position:fixed;top:150px;background-color:#e6eefe; height:48px; margin-left:0;z-index:999">
       <p style="padding:20px;padding-top:14px;padding-bottom:0">
-        <a click.delegate="showSection('killaSection')" style="background-color:#760908;color:white;text-decoration:none" class="kLink">North
-        </a> | <a click.delegate="showSection('meruSection')" class="mLink">South
-        </a> | <a click.delegate="showSection('oldSection')" class="oLink">
+        <a click.delegate="showSection('northSection')" style="background-color:#760908;color:white;text-decoration:none" class="nLink">North
+        </a> | <a click.delegate="showSection('southSection')" class="sLink">South
+        </a> | <a click.delegate="showSection('westSection')" class="wLink">
           West
         </a> | <a click.delegate="showSection('cultureSection')" class="cLink">
           Culture
@@ -16,10 +16,10 @@
       <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
         <div if.bind="!widescreenPage" class="mountain-nav" style="position:fixed; top:13px; background-color:white;height:20px">
           <p style="font-size:11pt">
-            <a class="kLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none;padding-left:6px" click.delegate="showSection('killaSection')">North
+            <a class="nLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none;padding-left:6px" click.delegate="showSection('northSection')">North
             </a> |
-            <a style="font-size:10pt" click.delegate="showSection('meruSection')" class="mLink">South
-            </a> | <a style="font-size:10pt" click.delegate="showSection('oldSection')" class="oLink">West
+            <a style="font-size:10pt" click.delegate="showSection('southSection')" class="sLink">South
+            </a> | <a style="font-size:10pt" click.delegate="showSection('westSection')" class="wLink">West
             </a> | <a style="font-size:10pt" click.delegate="showSection('cultureSection')" class="cLink">
               Culture
             </a>&nbsp;&nbsp;
@@ -27,20 +27,20 @@
         </div>
         <div if.bind="!widescreenPage" class="mountain-nav" style="background-color:white;height:20px">
           <p style="font-size:11pt">
-            <a class="kLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none;padding-left:6px" click.delegate="showSection('killaSection')">
+            <a class="nLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none;padding-left:6px" click.delegate="showSection('northSection')">
               North
             </a> |
-            <a style="font-size:10pt" click.delegate="showSection('meruSection')" class="mLink">
+            <a style="font-size:10pt" click.delegate="showSection('southSection')" class="sLink">
               South
-            </a> | <a style="font-size:10pt" click.delegate="showSection('oldSection')" class="oLink">
+            </a> | <a style="font-size:10pt" click.delegate="showSection('westSection')" class="wLink">
               West
             </a> | <a style="font-size:10pt" click.delegate="showSection('cultureSection')" class="cLink">
               Culture
             </a>
           </p>
         </div>
-        <h2 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:120px; text-align: center">Safaries</h2>
-        <h2 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align: center">Safaries</h2>
+        <h2 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:120px; text-align: center">Safaris</h2>
+        <h2 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align: center">Safaris</h2>
         <p>Tanzania is located in East Africa just south of the Equator. The plains of golden grass stretch toward the horizon until they meet a
           cloudless azure sky. Bush country that defines the word green. Shimmering sands, rustling palms, and sparkling seas. Tanzania is so rich in
           resources; it can be described as no less than immensely beautiful. Tanzania itself is a great destination for wildlife safari due to the
