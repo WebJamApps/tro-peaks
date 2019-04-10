@@ -18,7 +18,7 @@ export class Testimonials {
       res = await this.app.httpClient.fetch('/book?type=troTestimonials');
       if (res !== null && res !== undefined) this.testimonials = await res.json();
     } catch (e) { return sessionStorage.setItem('testimonialsError', `${e.message}`); }
-    console.log(this.testimonials);
+    // console.log(this.testimonials);
     if (this.testimonials.length > 0) {
       return this.buildTestimonials();
     }
@@ -30,7 +30,7 @@ export class Testimonials {
   }
   buildTestimonials() {
     const t = document.getElementsByClassName('testimonials')[0];
-    console.log(t);
+    // console.log(t);
     let content = '';
     if (t !== null && t !== undefined) {
       for (let i = 0; i < this.testimonials.length; i += 1) {

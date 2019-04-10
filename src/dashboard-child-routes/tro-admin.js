@@ -27,6 +27,7 @@ export class ClcAdmin {
     this.titleSelected = '';
     this.showDeleteButton = false;
     this.troHomePageContent = { title: '', comments: '', type: 'troHomePageContent' };
+    this.newTestimonial = { title: '', comments: '', type: 'troTestimonials' };
     // this.youthPageContent = { title: '', comments: '', type: 'youthPageContent' };
     // this.familyPageContent = { title: '', comments: '', type: 'familyPageContent' };
     // this.youthPicsArr = [];
@@ -139,6 +140,15 @@ export class ClcAdmin {
     })
       .then(() => {
         this.app.router.navigate('/?reload=true');
+      });
+  }
+  async addTestimonial() {
+    this.app.httpClient.fetch('/book', {
+      method: 'post',
+      body: json(this.newTestimonial)
+    })
+      .then(() => {
+        this.app.router.navigate('/testimonials?reload=true');
       });
   }
   // async changeYouthPage() {

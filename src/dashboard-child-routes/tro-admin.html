@@ -19,6 +19,18 @@
             </button>
           </form>
         </div>
+        <div class="material-content elevation3" style="max-width:5in; margin:auto">
+          <h4 class="material-header-h4">Add a Testimonial</h4>
+          <form>
+            <label>Title</label>
+            <input value.two-way="newTestimonial.title">
+            <label>Content</label>
+            <textarea rows="15" cols="32" value.two-way="newTestimonial.comments"></textarea>
+            <button id="addT" class="button-lib" raised click.trigger="addTestimonial()">
+              Create
+            </button>
+          </form>
+        </div>
         <!-- <p style="font-size:2pt">&nbsp;</p>
         <div class="material-content elevation3" style="max-width:5in; margin:auto">
           <h4 class="material-header-h4">Change Youthpage Section</h4>
