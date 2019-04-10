@@ -1,3 +1,4 @@
+import 'url-search-params-polyfill';
 import {
   inject
 } from 'aurelia-framework';
@@ -9,5 +10,11 @@ import {
 export class MountainItineraries {
   constructor(app) { this.app = app; }
   get widescreenPage() { return document.documentElement.clientWidth > 900; }
-  attached() { document.getElementById('top').scrollIntoView(); }
+  attached() {
+    if (document.location.search.includes('itinerary=')) {
+      const sp = new URLSearchParams(window.location.search);
+      const location = sp.get('itinerary');
+      document.getElementById(location).scrollIntoView();
+    } else document.getElementById('top').scrollIntoView();
+  }
 }
