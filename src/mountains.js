@@ -17,6 +17,7 @@ export class Mountains {
   get widescreenPage() { return document.documentElement.clientWidth > 900; }
   attached() { document.getElementById('top').scrollIntoView(); }
   showSection(name) {
+    document.getElementById('top').scrollIntoView();
     const mLink = document.getElementsByClassName('mLink');
     const kLink = document.getElementsByClassName('kLink');
     const oLink = document.getElementsByClassName('oLink');

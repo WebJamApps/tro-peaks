@@ -17,6 +17,7 @@ export class Safaris {
   get widescreenPage() { return document.documentElement.clientWidth > 900; }
   attached() { document.getElementById('top').scrollIntoView(); }
   showSection(name) {
+    document.getElementById('topSection').scrollIntoView();
     const nLink = document.getElementsByClassName('nLink');
     const sLink = document.getElementsByClassName('sLink');
     const wLink = document.getElementsByClassName('wLink');
