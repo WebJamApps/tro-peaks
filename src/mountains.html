@@ -1,6 +1,6 @@
 <template>
   <div class="page-content">
-    <a id="top"></a>
+
     <div if.bind="widescreenPage" class="mountain-nav" style="position:fixed;top:150px;background-color:#e6eefe; height:48px; margin-left:0;z-index:999">
       <p style="padding:20px;padding-top:14px;padding-bottom:0">
         <a click.delegate="showSection('killaSection')" style="background-color:#760908;color:white;text-decoration:none" class="kLink">Kilimanjaro
@@ -10,7 +10,7 @@
         </a>
       </p>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid"> <a id="top"></a>
       <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
         <div if.bind="!widescreenPage" class="mountain-nav" style="position:fixed; top:13px; background-color:white;height:20px">
           <p style="font-size:11pt">
@@ -35,7 +35,8 @@
         </div>
         <h2 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:120px; text-align: center">Mountain Climbs</h2>
         <h2 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align: center">Mountain Climbs</h2>
-        <div class="killa-section" if.bind="killaSection">
+
+        <div class="killaSection" if.bind="killaSection">
           <h3>Mount Kilimanjaro</h3>
           <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/yt8do3dowpdylbg/kilimanjaro-small.jpg?dl=0" alt="killamanjaro-small">
           <div if.bind="!widescreenPage" style="margin:auto;text-align:center">
@@ -120,7 +121,7 @@
           <hr>
           <p>&nbsp;</p>
         </div>
-        <div class="meru-section" if.bind="meruSection">
+        <div class="meruSection" if.bind="meruSection">
           <h3>Mount Meru</h3>
           <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/cubg5x84nmfbzxc/meru1.jpg?dl=0" alt="meru-small">
           <div if.bind="!widescreenPage" style="margin:auto;text-align:center">
@@ -179,7 +180,7 @@
           <hr>
           <p>&nbsp;</p>
         </div>
-        <div class="ol-doi-section" if.bind="oldSection">
+        <div class="oldSection" if.bind="oldSection">
           <h3>Ol Doinyo Lengai</h3>
           <img if.bind="widescreenPage" style="float: left;padding-right:10px;max-width:297px;margin-left:-9px;" src="https://dl.dropboxusercontent.com/s/45wezseunpj1e73/ol_doinyo_lengai.jpg?dl=0" alt="ol-d-small">
           <div if.bind="!widescreenPage" style="margin:auto;text-align:center">

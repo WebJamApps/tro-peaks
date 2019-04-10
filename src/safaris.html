@@ -1,6 +1,5 @@
 <template>
   <div class="page-content">
-    <a id="top"></a>
     <div if.bind="widescreenPage" class="mountain-nav" style="position:fixed;top:150px;background-color:#e6eefe; height:48px; margin-left:0;z-index:999">
       <p style="padding:20px;padding-top:14px;padding-bottom:0">
         <a click.delegate="showSection('northSection')" style="background-color:#760908;color:white;text-decoration:none" class="nLink">North
@@ -12,7 +11,7 @@
         </a>
       </p>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid"> <a id="top"></a>
       <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
         <div if.bind="!widescreenPage" class="mountain-nav" style="position:fixed; top:13px; background-color:white;height:20px">
           <p style="font-size:11pt">
@@ -98,9 +97,11 @@
           Here is also a wide variety of price and luxury. There may be in one large building, basically a hotel to small units spread out. Expect a bar and restaurant, swimming pool and other facilities. Some offer laundry service, internet, gift
           shop, etc. Some of the nicer ones have excellent evening entertainment, usually cultural shows from the local tribes. Many of these are in prime locations.
         </p>
+        <a id="topSection"></a>
         <p>
           We can work together as we assemble your itinerary with what options are the bet according to your budget, destination and time of the year that you are traveling.
         </p>
+
         <div class="north-section" if.bind="northSection">
           <hr>
           <p>&nbsp;</p>
