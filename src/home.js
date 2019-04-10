@@ -14,7 +14,7 @@ export class Home {
   async activate() {
     let res;
     try {
-      res = await this.app.httpClient.fetch('/book/one?type=homePageContent');
+      res = await this.app.httpClient.fetch('/book/one?type=troHomePageContent');
       if (res !== null && res !== undefined) this.homeContent = await res.json();
     } catch (e) { return sessionStorage.setItem('homeError', `${e.message}`); }
     return true;
