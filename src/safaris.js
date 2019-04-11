@@ -14,6 +14,20 @@ export class Safaris {
     this.westSection = false;
     this.cultureSection = false;
   }
+  slideshowImages = [
+    { src: 'https://dl.dropboxusercontent.com/s/86yd5fh036m9o9i/river-crossing.jpg?dl=0' }, // eslint-disable-next-line max-len
+    { src: 'https://dl.dropboxusercontent.com/s/3jl45x8xnicqmny/vehicle-zebra.jpg?dl=0' },
+    { src: 'https://dl.dropboxusercontent.com/s/51dtem0rkpkqimp/hadzabe.jpg?dl=0' }, // eslint-disable-line max-len
+    { src: 'https://dl.dropboxusercontent.com/s/3qtuxuod0cv9l91/katavi_np.jpg?dl=0' }, // eslint-disable-line max-len
+    { src: 'https://dl.dropboxusercontent.com/s/onzh5rx1qhje6gv/mahale_chimpanzee.jpg?dl=0' }, // eslint-disable-line max-len
+    { src: 'https://dl.dropboxusercontent.com/s/o63fj1a12uehi9s/maasai.jpg?dl=0' }, // eslint-disable-line max-len
+    { src: 'https://dl.dropboxusercontent.com/s/o1kc5jb8x20qt07/manyara_np.jpg?dl=0' }, // eslint-disable-line max-len
+    { src: 'https://dl.dropboxusercontent.com/s/jr5c1c31lnrxzc9/mikumi.jpg?dl=0' }, // eslint-disable-line max-len
+    { src: 'https://dl.dropboxusercontent.com/s/t1he7q9lhjn4b7t/mkomazi_np.jpg?dl=0' }, // eslint-disable-line max-len
+    { src: 'https://dl.dropboxusercontent.com/s/arj93g9eqzzxol4/ruaha4.jpg?dl=0' }, // eslint-disable-line max-len
+    { src: 'https://dl.dropboxusercontent.com/s/k1rlar5k5q83gpj/seluhu.jpg?dl=0' }, // eslint-disable-line max-len
+    { src: 'https://dl.dropboxusercontent.com/s/xxvbxofyntb2mr7/tarangire.jpg?dl=0' }// eslint-disable-line max-len
+  ];
   get widescreenPage() { return document.documentElement.clientWidth > 900; }
   attached() { document.getElementById('top').scrollIntoView(); }
   showSection(name) {
