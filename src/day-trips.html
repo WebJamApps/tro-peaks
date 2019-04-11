@@ -1,11 +1,19 @@
 <template>
+  <require from="./components/pic-slider"></require>
   <div class="page-content">
     <a id="top"></a>
     <div>
       <div class="container-fluid">
         <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
-          <!-- <h2 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:80px;text-align:center">Day Trips</h2> -->
-          <h2 style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align:center">Day Trips</h2>
+          <h2 style="padding-bottom:0;font-weight:100;margin-top:0;text-align:center;margin-bottom:4px">Day Trips</h2>
+          <div>
+            <div id="homeSlidesCell" if.bind="!widescreenPage">
+              <picture-slider data.bind="slideshowImages"></picture-slider>
+            </div>
+            <div id="safariSlidesWide" if.bind="widescreenPage">
+              <picture-slider data.bind="slideshowImages"></picture-slider>
+            </div>
+          </div>
           <p>Our day trips are a great way of taking in the local culture as you get over jet lag or after a mountain climb or safari. If you have
             special interests that are not listed here, talk to us an we can arrange other options. Our day trips are run by our staff guides and run the
             trips on a regular basis. Contact us for the schedule and prices.</p>
