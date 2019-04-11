@@ -1,17 +1,26 @@
 <template>
+  <require from="./components/pic-slider"></require>
   <div class="page-content">
     <a id="top"></a>
     <div>
       <div class="container-fluid">
         <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
           <!-- <h2 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:80px;text-align:center">Beach Holidays</h2> -->
-          <h2 style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align:center">Beach Holidays</h2>
+          <h2 style="padding-bottom:0;font-weight:100;margin-top:0;text-align:center;margin-bottom:4px">Beach Holidays</h2>
+          <div>
+            <div id="homeSlidesCell" if.bind="!widescreenPage">
+              <picture-slider data.bind="slideshowImages"></picture-slider>
+            </div>
+            <div id="safariSlidesWide" if.bind="widescreenPage">
+              <picture-slider data.bind="slideshowImages"></picture-slider>
+            </div>
+          </div>
+          <p style="padding:0;margin:0">&nbsp;</p>
           <h3>Zanzibar</h3>
           <p> Where better to go after an action-packed safari or a tough climb? Zanzibar is a tropical paradise just off the coast from Dar es Salaam. Let us arrange
             for you a relaxing beach vacation on the Isle of Spice. Zanzibar beach the endless blue skies, stunning white sands beaches framed by whispering palm fronds.
             Dancing to an African drum beat long into the night. Cool water and hot sun on your skin. The bustle of the bazaars and the exquisite architecture of
             Stonetown. Your memories of Zanzibar will last a lifetime. </p>
-
           <p>Tro-Peaks Adventures offers an unforgettable island excursion and we can organize a Zanzibar beach
             holiday for most any budget.
             Contact us to start planning a most memmorable Zanzibar excursion.</p>
