@@ -200,6 +200,10 @@ audio::-webkit-media-controls-panel {
   margin: auto;
 }
 
+#musicSlide1 img {
+  width: 100%;
+}
+
 /* #musicSlide1 {
   max-width: 998px !important;
   margin: auto !important;

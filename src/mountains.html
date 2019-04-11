@@ -12,7 +12,7 @@
     </div>
     <div class="container-fluid"> <a id="top"></a>
       <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
-        <div if.bind="!widescreenPage" class="mountain-nav" style="position:fixed; top:13px; background-color:white;height:20px">
+        <div if.bind="!widescreenPage" class="mountain-nav" style="position:fixed; top:13px; background-color:white;height:20px;z-index:999">
           <p style="font-size:11pt">
             <a class="kLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none;padding-left:6px" click.delegate="showSection('killaSection')">Kilimanjaro
             </a> |
@@ -207,10 +207,10 @@
           <p>&nbsp;</p>
         </div>
         <div class="m-safety-section" style="margin-top:0">
-          <div class="container-fluid">
+          <div class="container-fluid" style="z-index:9">
             <h3>Mountain Safety</h3>
-            <div class="row">
-              <div class="col-md-6 col-xl-6 col-12 col-sm-12">
+            <div class="row" style="z-index:-1">
+              <div class="col-md-6 col-xl-6 col-12 col-sm-12" style="z-index:9">
                 <p>At Tro-Peaks Adventure, the safety of our clients is our highest priority. We know our drivers, guides, cooks
                   and porters very well.&nbsp; They are always trusted and skilled people with whom we have worked in the past or who come highly
                   reccomended.&nbsp; Consequently, we know they will meet our high expectations for excellent service. Refer to what our clients have spoken
