@@ -1,8 +1,9 @@
 <template>
+  <require from="./components/pic-slider"></require>
   <div class="page-content">
-    <div if.bind="widescreenPage" class="mountain-nav" style="position:fixed;top:150px;background-color:#e6eefe; height:48px; margin-left:0;z-index:999">
-      <p style="padding:20px;padding-top:14px;padding-bottom:0">
-        <a click.delegate="showSection('northSection')" style="background-color:#760908;color:white;text-decoration:none" class="nLink">North
+    <div if.bind="widescreenPage" class="mountain-nav" style="position:fixed;top:150px;background-color:#e6eefe; height:44px; margin-left:0;z-index:99999">
+      <p style="padding:18px;padding-top:12px;padding-bottom:0">
+        <a click.delegate="showSection('northSection')" class="nLink">North
         </a> | <a click.delegate="showSection('southSection')" class="sLink">South
         </a> | <a click.delegate="showSection('westSection')" class="wLink">
           West
@@ -13,9 +14,9 @@
     </div>
     <div class="container-fluid"> <a id="top"></a>
       <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
-        <div if.bind="!widescreenPage" class="mountain-nav" style="position:fixed; top:13px; background-color:white;height:20px">
+        <div if.bind="!widescreenPage" class="mountain-nav" style="position:fixed; top:13px; background-color:white;height:20px;z-index:999">
           <p style="font-size:11pt">
-            <a class="nLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none;padding-left:6px" click.delegate="showSection('northSection')">North
+            <a class="nLink" style="font-size:10pt;padding-left:6px" click.delegate="showSection('northSection')">North
             </a> |
             <a style="font-size:10pt" click.delegate="showSection('southSection')" class="sLink">South
             </a> | <a style="font-size:10pt" click.delegate="showSection('westSection')" class="wLink">West
@@ -26,7 +27,7 @@
         </div>
         <div if.bind="!widescreenPage" class="mountain-nav" style="background-color:white;height:20px">
           <p style="font-size:11pt">
-            <a class="nLink" style="font-size:10pt;background-color:#760908;color:white;text-decoration:none;padding-left:6px" click.delegate="showSection('northSection')">
+            <a class="nLink" style="font-size:10pt;padding-left:6px" click.delegate="showSection('northSection')">
               North
             </a> |
             <a style="font-size:10pt" click.delegate="showSection('southSection')" class="sLink">
@@ -38,8 +39,16 @@
             </a>
           </p>
         </div>
-        <h2 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:40px; text-align: center">Safaris</h2>
+        <h2 if.bind="widescreenPage" style="padding-bottom:0;font-weight:100;margin-top:0; text-align: center;margin-bottom:0">Safaris</h2>
         <h2 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align: center">Safaris</h2>
+        <div>
+          <div id="homeSlidesCell" if.bind="!widescreenPage">
+            <picture-slider data.bind="slideshowImages"></picture-slider>
+          </div>
+          <div id="safariSlidesWide" if.bind="widescreenPage">
+            <picture-slider data.bind="slideshowImages"></picture-slider>
+          </div>
+        </div>
         <p>Tanzania is located in East Africa just south of the Equator. The plains of golden grass stretch toward the horizon until they meet a
           cloudless azure sky. Bush country that defines the word green. Shimmering sands, rustling palms, and sparkling seas. Tanzania is so rich in
           resources; it can be described as no less than immensely beautiful. Tanzania itself is a great destination for wildlife safari due to the
