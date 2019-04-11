@@ -42,7 +42,7 @@
               <option value=""></option>
               <option repeat.for="pic of existingPics" value="${pic._id}" model.bind="existingPics">${pic.title}</option>
             </select>
-            <button style="margin-left:1.5in;width:1in" if.bind="showDeletePicButton" id="deleteStuff" class="button-lib" raised click.trigger="deletePic()">
+            <button style="margin-left:1.5in;width:1in" if.bind="showDeletePicButton" id="deletePic" class="button-lib" raised click.trigger="deletePic()">
               Delete Pic
             </button>
           </form>
