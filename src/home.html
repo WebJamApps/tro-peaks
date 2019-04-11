@@ -1,13 +1,22 @@
 <template>
+  <require from="./components/pic-slider"></require>
   <div class="page-content">
     <a id="top"></a>
     <div>
+      <div>
+        <div id="homeSlidesCell" if.bind="!widescreenHomepage">
+          <picture-slider data.bind="slideshowImages"></picture-slider>
+        </div>
+        <div id="homeSlidesWide" if.bind="widescreenHomepage">
+          <picture-slider data.bind="slideshowImages"></picture-slider>
+        </div>
+      </div>
       <div class="container-fluid">
-        <div>
+        <!-- <div>
           <div id="musicSlide1" style="margin-top:0">
             <img alt="kilimanjaro" src="https://dl.dropboxusercontent.com/s/zddcbz3j280is5a/kilimanjaro-banner.png?dl=0">
           </div>
-        </div>
+        </div> -->
         <div class="material-content elevation2" style="max-width:998px;margin:auto;background-color:white"">
           <p style=" padding:0;margin:0">&nbsp;</p>
           <h3>Tanzanian Safaris, Climbs, & Beach Holidays</h3>

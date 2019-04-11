@@ -187,13 +187,20 @@ audio::-webkit-media-controls-panel {
 }
 
 /* Slideshow container */
-#youthSlideshow, #youthSlideshow1, #familySlideshow, #familySlideshow1, #slideshowMusic, #slideshow1, #slideshow, #musicSlide2, #lSlide1, #lSlide2 {
+/* #youthSlideshow, #youthSlideshow1, #familySlideshow, #familySlideshow1, #slideshowMusic, #slideshow1, #slideshow, #musicSlide2, #lSlide1, #lSlide2 {
   max-width: 600px;
   position: relative;
   margin: auto;
+} */
+/* Slideshow container */
+#homeSlidesWide {
+  z-index: 99999999;
+  max-width: 1100px;
+  /* position: relative; */
+  margin: auto;
 }
 
-#musicSlide1 {
+/* #musicSlide1 {
   max-width: 998px !important;
   margin: auto !important;
 }
@@ -205,17 +212,21 @@ audio::-webkit-media-controls-panel {
 
 #slideshow1 img, #musicSlide1 img {
   width: 100%;
-}
-
-#familySlideshow img, #familySlideshow1 img, #youthSlideshow img, #youthSlideshow1 img, #slideshowMusic img, #slideshow img, #musicSlide2 img, #lSlide1 img, #lSlide2 img {
-  /* width: 100%; */
+} */
+/* #familySlideshow img, #familySlideshow1 img, #youthSlideshow img, #youthSlideshow1 img, #slideshowMusic img, #slideshow img, #musicSlide2 img, #lSlide1 img, #lSlide2 img { */
+/* width: 100%; */
+/* margin: auto;
+  max-height: 5in;
+  cursor: pointer; */
+/* max-height: 5in; */
+/* } */
+/* #familySlideshowWide img, #familySlideshow1 img, #youthSlideshowWide img, #youthSlideshowWide1 img {
   margin: auto;
   max-height: 5in;
-  cursor: pointer;
-  /* max-height: 5in; */
-}
-
-#familySlideshowWide img, #familySlideshow1 img, #youthSlideshowWide img, #youthSlideshowWide1 img {
+  padding-top: 1px
+} */
+#homeSlidesWide img {
+  z-index: -1;
   margin: auto;
   max-height: 5in;
   padding-top: 1px
@@ -264,6 +275,7 @@ audio::-webkit-media-controls-panel {
 }
 
 .slick-slider {
+  z-index: 999999;
   cursor: pointer !important;
 }
 
@@ -831,10 +843,10 @@ a:hover {
 }
 
 @media screen and (max-width: 430px) {
-  div.slick-slider.slick-initialized {
-    min-height: 45vh !important;
-  }
 
+  /* div.slick-slider.slick-initialized {
+    min-height: 45vh !important;
+  } */
   .slick-slide>div>div>img {
     width: 100% !important;
   }
