@@ -9,5 +9,5 @@ import {
 export class Booking {
   constructor(app) { this.app = app; }
   get widescreenPage() { return document.documentElement.clientWidth > 900; }
-  attached() { document.getElementById('top').scrollIntoView(); }
+  attached() { document.getElementsByClassName('page-content')[0].scrollIntoView(); }
 }

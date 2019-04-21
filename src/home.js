@@ -28,4 +28,6 @@ export class Home {
   }
 
   get widescreenHomepage() { return document.documentElement.clientWidth > 1200; }
+
+  attached() { document.getElementsByClassName('page-content')[0].scrollIntoView(); }
 }
