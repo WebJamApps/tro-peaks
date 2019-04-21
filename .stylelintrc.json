@@ -21,6 +21,7 @@
     "indentation": null,
     "no-missing-end-of-source-newline": null,
     "selector-combinator-space-after": null,
-    "selector-combinator-space-before": null
+    "selector-combinator-space-before": null,
+    "declaration-colon-space-after":null
   }
 }

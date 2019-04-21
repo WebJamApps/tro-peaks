@@ -24,10 +24,15 @@ export class ClcAdmin {
     this.canSubmit = false; // the button on the form
     this.validType = false;
     this.existingBooks = [];
+    this.existingPics = [];
     this.titleSelected = '';
+    this.picTitleSelected = '';
     this.showDeleteButton = false;
+    this.showDeletePicButton = false;
     this.troHomePageContent = { title: '', comments: '', type: 'troHomePageContent' };
     this.newTestimonial = { title: '', comments: '', type: 'troTestimonials' };
+    this.newPic = { title: '', url: '', type: 'troHomePics' };
+    this.errorMessage = '';
   }
 
   get widescreenPage() { return document.documentElement.clientWidth > 900; }
@@ -36,11 +41,13 @@ export class ClcAdmin {
     const uid = this.app.auth.getTokenPayload().sub;
     this.user = await this.app.appState.getUser(uid);
     this.app.role = this.user.userType;
-    let res;
+    let res, pics;
     try {
       res = await this.app.httpClient.fetch('/book?type=troTestimonials');
       if (res !== null && res !== undefined) this.existingBooks = await res.json();
-    } catch (e) { return sessionStorage.setItem('testimonialsError', `${e.message}`); }
+      pics = await this.app.httpClient.fetch('/book?type=troHomePics');
+      if (pics !== null && pics !== undefined) this.existingPics = await pics.json();
+    } catch (e) { return sessionStorage.setItem('fetchBookError', `${e.message}`); }
     return Promise.resolve(true);
   }
   async changeHomePage() {
@@ -66,9 +73,32 @@ export class ClcAdmin {
     this.showDeleteButton = true;
     if (this.titleSelected === '') this.showDeleteButton = false;
   }
+  showDeletePic() {
+    this.showDeletePicButton = true;
+    if (this.picTitleSelected === '') this.showDeletePicButton = false;
+  }
   deleteBook() {
     const selectBookTitle = document.getElementById('selectBookTitle');
     const id = selectBookTitle.options[selectBookTitle.selectedIndex].value;
     return this.utils.deleteBookById(id, this, 'testimonials');
+  }
+  deletePic() {
+    const selectPicTitle = document.getElementById('selectPicTitle');
+    const id = selectPicTitle.options[selectPicTitle.selectedIndex].value;
+    return this.utils.deleteBookById(id, this, '');
+  }
+  async addPic() {
+    this.errorMessage = '';
+    if (this.newPic.title === '' || this.newPic.url === '') {
+      this.errorMessage = 'Your picture must include a title and a url';
+      return Promise.resolve(false);
+    }
+    return this.app.httpClient.fetch('/book', {
+      method: 'post',
+      body: json(this.newPic)
+    })
+      .then(() => {
+        this.app.router.navigate('/?reload=true');
+      });
   }
 }
