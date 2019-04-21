@@ -242,3 +242,7 @@ exports.makeCSVfile = function makeCSVfile(fetchClient, route, fileName) {
       return filesaver.saveAs(file);
     });
 };
+
+exports.alwaysTop = function alwaysTop() {
+  document.getElementById('top').scrollIntoView();
+};
