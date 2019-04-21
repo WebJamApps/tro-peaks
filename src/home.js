@@ -1,9 +1,7 @@
-import {
-  inject
-} from 'aurelia-framework';
-import {
-  App
-} from './app';
+import { inject } from 'aurelia-framework';
+import { App } from './app';
+import { alwaysTop } from './commons/utils';
+
 @inject(App)
 export class Home {
   constructor(app) {
@@ -29,5 +27,5 @@ export class Home {
 
   get widescreenHomepage() { return document.documentElement.clientWidth > 1200; }
 
-  attached() { document.getElementsByClassName('page-content')[0].scrollIntoView(); }
+  attached() { alwaysTop(); }
 }
