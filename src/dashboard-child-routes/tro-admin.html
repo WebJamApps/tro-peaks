@@ -1,0 +1,80 @@
+<template>
+  <div class="page-content">
+    <a id="top"></a>
+    <div class="container-fluid">
+      <div class="material-content elevation2" style="max-width:998px;padding-bottom:-80px;margin:auto;background-color:white">
+        <h3 if.bind="widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:80px;text-align: center">Admin Dashboard</h3>
+        <h3 if.bind="!widescreenPage" style="padding-bottom:15px;font-weight:100;margin-top:20px;text-align: center">Admin Dashboard</h3>
+
+        <p style="font-size:2pt">&nbsp;</p>
+        <div class="material-content elevation3" style="max-width:5in; margin:auto">
+          <h4 class="material-header-h4">Change Homepage Section</h4>
+          <form>
+            <label>Title</label>
+            <input value.two-way="troHomePageContent.title" style="min-width:0">
+            <label>Content</label>
+            <textarea style="max-width:100%" rows="15" cols="32" value.two-way="troHomePageContent.comments"></textarea>
+            <button style="margin-left:2in" id="changeStuff" class="button-lib" raised click.trigger="changeHomePage()">
+              Submit
+            </button>
+          </form>
+        </div>
+        <p style="margin:0;padding:0">&nbsp;</p>
+        <div class="material-content elevation3" style="max-width:5in; margin:auto">
+          <h4 class="material-header-h4">Add Homepage Picture</h4>
+          <form>
+            <label>Title</label>
+            <input value.two-way="newPic.title" style="min-width:0" required>
+            <label>Url</label>
+            <input value.two-way="newPic.url" style="width:100%;min-width:0" required>
+            <button id="addPic" class="button-lib" raised click.trigger="addPic()" style="width:1in;margin-left:1.7in">
+              Add Pic
+            </button>
+          </form>
+          <p style="color:red;"><strong>${errorMessage}</strong></p>
+        </div>
+        <p style="margin:0;padding:0">&nbsp;</p>
+        <div class="material-content elevation3" style="max-width:5in; margin:auto">
+          <h4 class="material-header-h4">Delete a Homepage Picture</h4>
+          <form>
+            <label style="padding-top:0">Select</label>
+            <select id="selectPicTitle" class="form-control" change.delegate="showDeletePic()" value.bind="picTitleSelected" style="margin-top:0;max-width: 2.5in;overflow-wrap:break-word;word-break:break-all;">
+              <option value=""></option>
+              <option repeat.for="pic of existingPics" value="${pic._id}" model.bind="existingPics">${pic.title}</option>
+            </select>
+            <button style="margin-left:1.5in;width:1in" if.bind="showDeletePicButton" id="deletePic" class="button-lib" raised click.trigger="deletePic()">
+              Delete Pic
+            </button>
+          </form>
+        </div>
+        <p style="margin:0;padding:0">&nbsp;</p>
+        <div class="material-content elevation3" style="max-width:5in; margin:auto">
+          <h4 class="material-header-h4">Add a Testimonial</h4>
+          <form>
+            <label>Title</label>
+            <input value.two-way="newTestimonial.title" style="min-width:0">
+            <label>Content</label>
+            <textarea style="max-width:100%" rows="15" cols="32" value.two-way="newTestimonial.comments"></textarea>
+            <button style="margin-left:2in" id="addT" class="button-lib" raised click.trigger="addTestimonial()">
+              Create
+            </button>
+          </form>
+        </div>
+        <p style="margin:0;padding:0">&nbsp;</p>
+        <div class="material-content elevation3" style="max-width:5in; margin:auto">
+          <h4 class="material-header-h4">Delete a Testimonial</h4>
+          <form>
+            <label style="padding-top:0">Select</label>
+            <select id="selectBookTitle" class="form-control" change.delegate="showDelete()" value.bind="titleSelected" style="margin-top:0;max-width: 2.5in;overflow-wrap:break-word;word-break:break-all;">
+              <option value=""></option>
+              <option repeat.for="book of existingBooks" value="${book._id}" model.bind="existingBooks">${book.title}</option>
+            </select>
+            <button style="margin-left:2in" if.bind="showDeleteButton" id="deleteStuff" class="button-lib" raised click.trigger="deleteBook()">
+              Delete
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

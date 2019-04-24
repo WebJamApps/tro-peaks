@@ -1,0 +1,162 @@
+<template>
+  <div class="page-host">
+    <div class="${currentStyles.sidebarClass} drawer-container" style="display:none">
+      <p if.bind="widescreen" style="padding-top:5px;padding-left:5px"><strong><i>Tro-Peaks Adventures Ltd.</i></strong><br>
+        <a class="email" href="https://www.google.com/maps/place/Moshi+Urban,+Tanzania/@-3.5287124,37.2597798,11z/data=!3m1!4b1!4m5!3m4!1s0x18382f0f5a223887:0xaff7235006d15860!8m2!3d-3.527647!4d37.4254444" target="_blank">
+          Moshi-Kilimanjaro, Tanzania
+        </a><br>
+        Cell: +255 763 830820<br>
+        Cell: +255 756 728700<br>
+        <a class="email" href="mailto:tropeaksadventures@gmail.com">
+          Email: tropeaksadventures<br>@gmail.com
+        </a>
+      </p>
+      <div class="drawer" style="display: none !important;background-color: #9cbafa;z-index:999999">
+        <div style="background-color:#9cbafa;width:220px;">
+        </div>
+        <div class="nav-list" style="top:150px;background-color: #e6eefe;z-index:9999999">
+          <div class="menu-item">
+            <a href="/booking" class="nav-link" click.delegate="close()">
+              <span class="fa fa-user-plus" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Contact & Booking</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="/testimonials" class="nav-link" click.delegate="close()">
+              <span class="fa fa-bullhorn" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Testimonials</span>
+            </a>
+          </div>
+          <div class="menu-item" if.bind="currentRoute !=='mountains' || widescreen">
+            <a href="/mountains" class="nav-link" click.delegate="close()">
+              <span class="fa fa-area-chart" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Mountain Climbs</span>
+            </a>
+          </div>
+          <div class="menu-item" if.bind="currentRoute !=='safaris' || widescreen">
+            <a href="/safaris" class="nav-link" click.delegate="close()">
+              <span class="fa fa-paw" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Safaris</span>
+            </a>
+          </div>
+          <div class="menu-item" if.bind="currentRoute !=='beaches' || widescreen">
+            <a href="/beaches" class="nav-link" click.delegate="close()">
+              <span class="fa fa-anchor" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Beach Holidays</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="/day-trips" class="nav-link" click.delegate="close()">
+              <span class="fa fa-shopping-basket" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Day Trips</span>
+            </a>
+          </div>
+          <div class="menu-item" if.bind="currentRoute !=='staff' || widescreen">
+            <a href="/staff" class="nav-link" click.delegate="close()">
+              <span class="fa fa-pied-piper-alt" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Staff</span>
+            </a>
+          </div>
+          <div class="menu-item" if.bind="authenticated && (currentRoute !=='dashboard-router'|| widescreen)">
+            <a href="/dashboard" class="nav-link" click.delegate="close()">
+              <span class="fa fa-tachometer"></span>
+              <span class="nav-item">Admin Dashboard</span>
+            </a>
+          </div>
+          <div class="menu-item" if.bind="currentRoute !=='home' && currentRoute !==''">
+            <a href="/" class="nav-link" click.delegate="close()">
+              <span class="fa fa fa-eye" aria-hidden="true"></span>
+              <span class="nav-item" if.bind="fullmenu">Home</span>
+            </a>
+          </div>
+          <div class="menu-item" if.bind="!authenticated && currentRoute ==='staff'" style="text-align:center;margin:center">
+            <a class="nav-link" click.delegate="authenticate('google')" style=" padding-right:4px">
+              <span class="fa fa-sign-in nav-item" style="cursor: pointer; cursor: hand;color:#760908"></span>
+            </a>
+            <button click.delegate="authenticate('google')">Login</button>
+          </div>
+          <div class="menu-item" if.bind="authenticated">
+            <a class="nav-link" click.delegate="logout()" style=" padding-right:4px">
+              <span class="fa fa-sign-out nav-item" style="cursor: pointer; cursor: hand;color:#760908"></span>
+            </a>
+            <button click.delegate="logout()" class="material-content-button">
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div main class="main-panel">
+      <i click.delegate="toggleMobileMenu('open')" style="color:#760908" id="mobilemenutoggle" class="fa fa-bars pull-right fa-lg mobile-menu-toggle" aria-hidden="true" show.bind="!widescreen"></i>
+      <div class="mainPanel">
+        <div class="swipe-area">
+          <div class="p-5 d-block"></div>
+        </div>
+        <div class="material-header ${currentStyles.headerClass}" style="height:150px;background-color:#9cbafa;position:relative;z-index:9999">
+          <div style="margin:auto; top:4px" if.bind="widescreen">
+            <table>
+              <tbody class="formatting" style="background-color:none">
+                <tr class="formatting" style="background-color:none">
+                  <td style="border:none;padding-top:6px; background-color:transparent">
+                    <div class="businessCardWide" style="z-index:9">
+                      <img src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0" style="z-index:9">
+                    </div>
+                  </td>
+              </tbody>
+            </table>
+          </div>
+          <div class="cardBack" style="background-color:#9cbafa;display:none;position:fixed;top:0;height:138px;width:100%;margin:auto">
+            <p style="padding-top:10px;padding-left:16px"><strong><i>Tro-Peaks Adventures Ltd.</i></strong><br>
+              <a class="email" href="https://www.google.com/maps/place/Moshi+Urban,+Tanzania/@-3.5287124,37.2597798,11z/data=!3m1!4b1!4m5!3m4!1s0x18382f0f5a223887:0xaff7235006d15860!8m2!3d-3.527647!4d37.4254444" target="_blank">
+                Moshi-Kilimanjaro, Tanzania
+              </a><br>
+              Cell: +255 763 830820<br>
+              Cell: +255 756 728700<br>
+              Email:
+              <a class="email" href="mailto:tropeaksadventures@gmail.com">
+                tropeaksadventures@gmail.com
+              </a>
+            </p>
+          </div>
+          <div style="margin:auto; top:0" if.bind="!widescreen">
+            <table>
+              <tbody class="formatting" style="background-color:none">
+                <tr class="formatting" style="background-color:none">
+                  <td style="border:none;padding:2px; background-color:transparent;">
+                    <div class="businessCard">
+                      <img src="https://dl.dropboxusercontent.com/s/5dlfnpvjjkqs35e/TP-logo_cropped.png?dl=0" style="width:3.28in">
+                    </div>
+                  </td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div style="width:auto;top:150px;margin-top:0;background-color:#636679" class="content-block">
+          <router-view></router-view>
+          <div id="wjfooter" class="footer" style="margin-top:20px;background-color:#9cbafa">
+            <div style="text-align: center;padding:16px;margin-bottom:0;margin-top:0;padding-top:30px;padding-bottom:30px">
+              <a target="_blank" style="text-decoration:none; border:none;z-index:16777271;color:#760908;padding-right:5px" href="https://www.facebook.com/tropeaks/">
+                <i class="fa fa-facebook-square fa-2x footerIcon" aria-hidden="true">
+                </i>
+              </a>
+              <a target="_blank" style="text-decoration:none; border:none;z-index:16777271;color:#760908;padding-right:8px" href="https://www.tripadvisor.com/ShowUserReviews-g293750-d459953-r395117646-Mount_Kilimanjaro-Kilimanjaro_National_Park_Kilimanjaro_Region.html">
+                <i class="fa fa-tripadvisor fa-2x footerIcon" aria-hidden="true">
+                </i>
+              </a>
+              <a target="_blank" style="text-decoration:none; border:none;z-index:16777271;padding-right:8px;" href="https://www.lifeasabutterfly.com/tro-peaks-adventures-five-star-review/">
+                <img src="https://i1.wp.com/www.lifeasabutterfly.com/wp-content/uploads/47375805_2278917658786276_5382992793952059392_n-2.png?w=2000&ssl=1" style="width:60px;padding-bottom:14px">
+              </a>
+              <a target="_blank" style="text-decoration:none; border:none;z-index:16777271;padding-right:8px;" href="https://www.lonelyplanet.com/thorntree/forums/africa/tanzania/kilimanjaro-with-tro-peaks-adventures-just-amazing">
+                <img src="https://dl.dropboxusercontent.com/s/73az6yujogg3vcu/Screenshot%20at%202019-03-19%2016-53-33.png?dl=0" style="width:60px;padding-bottom:12px">
+              </a>
+              <br><span style="z-index: 16777271;color:white; font-size: 10pt;margin-bottom:0">
+                Powered by <a class="wjllc" target="_blank" href="https://www.web-jam.com">Web Jam LLC
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
