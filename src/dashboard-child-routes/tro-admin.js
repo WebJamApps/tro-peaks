@@ -16,7 +16,7 @@ export class ClcAdmin {
       title: '',
       type: '',
       url: '',
-      access: 'CLC'
+      access: 'TRO'
     };
     this.validator = new FormValidator(validator, results => this.updateCanSubmit(results)); // if the form is valid then set to true.
     this.controller = controllerFactory.createForCurrentScope(this.validator);
